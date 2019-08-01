@@ -1,0 +1,1584 @@
+<!DOCTYPE html>
+<!--[if IE 9 ]>    <html class="ie9" lang="en" ng-app="naut"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients no-cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths win ng-scope" ng-app="naut" lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.gm-style .gm-style-mtc label,.gm-style .gm-style-mtc div{font-weight:400}</style><link href="css/css.css" rel="stylesheet" type="text/css"><style type="text/css">.gm-style .gm-style-cc span,.gm-style .gm-style-cc a,.gm-style .gm-style-mtc div{font-size:10px}</style><style type="text/css">@media print {  .gm-style .gmnoprint, .gmnoprint {    display:none  }}@media screen {  .gm-style .gmnoscreen, .gmnoscreen {    display:none  }}</style><style type="text/css">.gm-style{font-family:Roboto,Arial,sans-serif;font-size:11px;font-weight:400;text-decoration:none}.gm-style img{max-width:none}</style><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="Bootstrap + AngularJS">
+<meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+<title class="ng-binding" data-ng-bind="pageTitle()">Naut - Bootstrap + AngularJS</title>
+<link rel="stylesheet" href="css/application-f35d0077.css">
+<link href="css/font-awesome.css" rel="stylesheet" type="text/css">
+<link href="css/weather-icons.css" rel="stylesheet" type="text/css">
+<link href="css/feather.css" rel="stylesheet" type="text/css">
+<link href="css/toaster.css" rel="stylesheet" type="text/css">
+<link href="css/textAngular.css" rel="stylesheet" type="text/css">
+<link href="css/animate.css" rel="stylesheet" type="text/css">
+
+<!--<script style="" src="js/analytics.js" async=""></script>
+<script async="" src="js/toaster.js"></script>
+<script async="" src="js/load-google-maps.js"></script>
+<script async="" src="js/ui-map.js"></script>
+<script async="" src="js/jquery_005.js"></script>
+<script async="" src="js/screenfull.js"></script>
+<script async="" src="js/jquery_002.js"></script>
+<script async="" src="js/jquery_007.js"></script>
+<script async="" src="js/jquery_011.js"></script>
+<script async="" src="js/jquery_009.js"></script>
+<script async="" src="js/jquery_004.js"></script>
+<script async="" src="js/jquery_010.js"></script>
+<script async="" src="js/jquery_008.js"></script>
+<script async="" src="js/jquery_003.js"></script>
+<script async="" src="js/angular.js"></script>
+<script src="js/common.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/util.js" charset="UTF-8" type="text/javascript"></script>
+<script async="" src="js/moment-with-locales.js"></script>
+<script src="js/textAngular-rangy.js"></script>
+<script src="js/textAngular-sanitize.js"></script>
+<script src="js/globals.js"></script>
+<script src="js/factories.js"></script>
+<script src="js/DOM.js"></script>
+<script src="js/validators.js"></script>
+<script src="js/taBind.js"></script>
+<script src="js/main_002.js"></script>
+<script src="js/textAngularSetup.js"></script>
+<script async="" src="js/angular-file-upload.js"></script>
+<script async="" src="js/bootstrap-filestyle.js"></script>
+<script async="" src="js/angular-knob.js"></script>
+<script async="" src="js/jquery_006.js"></script>
+<script src="js/stats.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/map.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/onion.js" charset="UTF-8" type="text/javascript"></script>
+<script src="js/controls.js" charset="UTF-8" type="text/javascript"></script>
+<script async="" src="js/jquery-ui.js"></script><script async="" src="js/jquery.js"></script>
+<script src="js/marker.js" charset="UTF-8" type="text/javascript"></script>-->
+
+<style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
+</head>
+<body class="in-app footer-hidden" ng-clok="" ng-class="{ 'layout-fixed' : app.layout.isFixed, 'layout-boxed' : app.layout.isBoxed, 'layout-dock' : app.layout.isDocked, 'layout-material': app.layout.isMaterial, 'aside-offscreen' : app.sidebar.isOffscreen, 'aside-mini' : app.sidebar.isMini, 'footer-hidden': app.footer.hidden, 'in-app': !$state.includes('page')}">
+    <!-- uiView:  -->
+    <div data-ui-view="" data-autoscroll="false" ng-controller="CoreController" class="app-container ng-scope"><!-- top navbar-->
+        <!-- ngInclude: 'templates/top-navbar.html' -->
+        <header class="ng-scope bg-info" ng-include="'templates/top-navbar.html'" ng-class="app.theme.topbar"><!-- START Top Navbar-->
+            <nav role="navigation" ng-controller="HeaderNavController as header" class="navbar topnavbar ng-scope">
+                <!-- START button offset-->
+               <div class="btn-offset">
+                  <button type="button" btn-layer-morph="" target="#layer-search" ripple="" class="btn btn-info btn-circle btn-lg shadow-z1">
+                     <em class="fa fa-search"></em>
+                  <span class="ripple"><span style="width: 48px; height: 48px; left: -7px; top: 0px;" class="angular-ripple"></span></span></button>
+               </div>
+               <!-- START button offset-->
+               <!-- START navbar header-->
+               <div class="navbar-header">
+                  <a href="#/app/dashboard" ui-sref="app.dashboard" class="navbar-brand">
+                     <img src="images/logo.png" alt="App Logo" class="brand-logo">
+                  </a>
+                  <!-- Mobile buttons-->
+                  <div class="mobile-toggles">
+                     <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+                     <a href="" ng-click="app.sidebar.isOffscreen = !app.sidebar.isOffscreen" class="sidebar-toggle">
+                        <em class="fa fa-navicon"></em>
+                     </a>
+                     <!-- Button to show/hide the header menu on mobile. Visible on mobile only.-->
+                     <a href="" ng-click="header.toggleHeaderMenu()" class="menu-toggle hidden-material">
+                        <em class="fa fa-ellipsis-v fa-fw"></em>
+                     </a>
+                  </div>
+               </div>
+               <!-- END navbar header-->
+               <!-- START Nav wrapper-->
+               <div style="height: 0px;" collapse="header.headerMenuCollapsed" class="nav-wrapper collapse navbar-collapse">
+                  <!-- START Left navbar-->
+                  <ul class="nav navbar-nav hidden-material">
+                     <li>
+                        <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+                        <a href="" ng-click="app.sidebar.isOffscreen = !app.sidebar.isOffscreen" class="hidden-xs">
+                           <em ng-class="app.sidebar.isOffscreen ? 'fa-caret-right':'fa-caret-left'" class="fa fa-caret-left"></em>
+                        </a>
+                     </li>
+                     <!-- START Apps menu-->
+                     <li dropdown="" class="dropdown">
+                        <a aria-expanded="false" aria-haspopup="true" href="" dropdown-toggle="" ripple="" class="dropdown-toggle">
+                           <em class="fa fa-th fa-fw"></em>
+                           <span class="visible-xs-inline ml">Applications</span>
+                        <span class="ripple"></span></a>
+                        <!-- START Dropdown menu-->
+                        <ul id="bg-white" class="dropdown-menu p wd-lg">
+                           <div class="row ml0 mr0 mt mb text-center">
+                              <div class="col-xs-4">
+                                 <div class="pv">
+                                    <a href="#/app/extras/profile" ui-sref="app.extras.profile">
+                                       <span class="block mb">
+                                          <em class="icon-head fa-2x text-warning"></em>
+                                       </span>
+                                       <small class="text-muted">Profile</small>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="pv">
+                                    <a href="#/fh/mailbox/folder/inbox" ui-sref="app-fh.mailbox.folder.list({folder: 'inbox'})">
+                                       <span class="block mb">
+                                          <em class="icon-mail fa-2x text-primary"></em>
+                                       </span>
+                                       <small class="text-muted">Mailbox</small>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="pv">
+                                    <a href="#/app/extras/calendar" ui-sref="app.extras.calendar">
+                                       <span class="block mb">
+                                          <em class="fa fa-calendar fa-2x text-danger"></em>
+                                       </span>
+                                       <small class="text-muted">Calendar</small>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="pv">
+                                    <a href="#/app/maps/vector" ui-sref="app.maps.vector">
+                                       <span class="block mb">
+                                          <em class="icon-map fa-2x text-success"></em>
+                                       </span>
+                                       <small class="text-muted">Map</small>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="pv">
+                                    <a href="#/app/dashboard" ui-sref="app.dashboard">
+                                       <span class="block mb">
+                                          <em class="icon-bar-graph-2 fa-2x text-info"></em>
+                                       </span>
+                                       <small class="text-muted">Dashboard</small>
+                                    </a>
+                                 </div>
+                              </div>
+                              <div class="col-xs-4">
+                                 <div class="pv">
+                                    <a href="#/app/extras/gallery" ui-sref="app.extras.gallery">
+                                       <span class="block mb">
+                                          <em class="icon-image fa-2x text-muted"></em>
+                                       </span>
+                                       <small class="text-muted">Gallery</small>
+                                    </a>
+                                 </div>
+                              </div>
+                           </div>
+                        </ul>
+                     </li>
+                     <!-- END Apps menu-->
+                     <!-- START lock screen-->
+                     <li>
+                        <a href="#/page/lock" ui-sref="page.lock" title="Lock screen" ripple="">
+                           <em class="icon-lock fa-fw"></em>
+                           <span class="visible-xs-inline ml">Lock Screen</span>
+                        <span class="ripple"></span></a>
+                     </li>
+                     <!-- END lock screen-->
+                  </ul>
+                  <!-- END Left navbar-->
+               </div>
+               <!-- END Nav wrapper-->
+
+            </nav>
+            <!-- END Top Navbar--></header>
+            <!-- Sidebar-->
+            <!-- ngInclude: 'templates/sidebar.html' --><aside class="ng-scope bg-white" ng-include="'templates/sidebar.html'" ng-class="app.theme.sidebar"><!-- START Sidebar-->
+            <div class="sidebar-wrapper ng-scope">
+               <div ui-sidebar="" class="sidebar">
+                  <div class="sidebar-nav">
+                     <ul class="nav">
+                        <!-- Iterates over all sidebar items-->
+                        <li class="nav-heading">
+                           <span translate="sidebar.heading.HEADER" class="text-muted ng-scope">Main Navigation</span>
+                        </li>
+                        <li class="active" ui-sref-active="active">
+                           <a href="#/app/dashboard" ui-sref="app.dashboard" title="Dashboard" ripple="">
+                              <div class="label pull-right label-success">4</div>
+                              <em class="sidebar-item-icon icon-pie-graph"></em>
+                              <span class="ng-scope" translate="sidebar.nav.DASHBOARD">Dashboard</span>
+                           <span class="ripple"></span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                           <a href="#/app/cards" ui-sref="app.cards" title="Cards" ripple="">
+                              <em class="sidebar-item-icon icon-stack"></em>
+                              <span class="ng-scope" translate="sidebar.nav.CARDS">Cards</span>
+                           <span class="ripple"></span></a>
+                        </li>
+                        <li ui-sref-active="active">
+                           <a href="#/fh/mailbox/folder/inbox" ui-sref="app-fh.mailbox.folder.list({folder: 'inbox'})" title="Mailbox" ripple="">
+                              <div class="label pull-right label-success">12</div>
+                              <em class="sidebar-item-icon icon-mail"></em>
+                              <span class="ng-scope" translate="sidebar.nav.app.MAILBOX">Mailbox</span>
+                           <span class="ripple"></span></a>
+                        </li>
+                        <li ng-class="{active:$state.includes('app-fh.columns')}">
+                           <a href="" title="Layouts" ripple="">
+                              <em class="sidebar-item-icon icon-layout"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span>Layouts</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Layouts</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/dock/dashboard" ui-sref="app-dock.dashboard" title="Docked" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Docked</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/fh/columns" ui-sref="app-fh.columns" title="Full Height" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Full Height</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <hr>
+                        </li>
+                        <li class="" ng-class="{active:$state.includes('app.ui')}">
+                           <a href="" title="Components" ripple="">
+                              <em class="sidebar-item-icon icon-box"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.component.COMPONENTS">Components</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Components</a>
+                              </li>
+                              <li class="" ui-sref-active="active">
+                                 <a href="#/app/ui/buttons" ui-sref="app.ui.buttons" title="Buttons" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.BUTTON">Buttons</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li class="" ui-sref-active="active">
+                                 <a href="#/app/ui/notifications" ui-sref="app.ui.notifications" title="Notifications" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.NOTIFICATION">Notifications</span>
+                                 <span class="ripple"><span style="width: 220px; height: 220px; left: -36px; top: 30.2167px;" class="angular-ripple"></span></span></a>
+                              </li>
+                              <li class="" ui-sref-active="active">
+                                 <a href="#/app/ui/bootstrapui" ui-sref="app.ui.bootstrapui" title="Bootsrap UI" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <div class="label pull-right label-primary">7</div>
+                                    <span class="ng-scope" translate="sidebar.nav.component.BOOTSTRAPUI">Bootstrap UI</span>
+                                 <span class="ripple"><span style="width: 220px; height: 220px; left: -29px; top: -86.8833px;" class="angular-ripple"></span></span></a>
+                              </li>
+                              <li class="" ui-sref-active="active">
+                                 <a href="#/app/ui/panels" ui-sref="app.ui.panels" title="Panels" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.PANEL">Panels</span>
+                                 <span class="ripple"><span style="width: 220px; height: 220px; left: -28px; top: 4.35001px;" class="angular-ripple"></span></span></a>
+                              </li>
+                              <li>
+                                 <hr>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/sweetalert" ui-sref="app.ui.sweetalert" title="SweetAlert" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>SweetAlert</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/navtree" ui-sref="app.ui.navtree" title="Nav Tree" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Nav Tree</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/nestable" ui-sref="app.ui.nestable" title="Nestable" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Nestable</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/sortable" ui-sref="app.ui.sortable" title="Sortable" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Sortable</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/grid" ui-sref="app.ui.grid" title="Grid" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.GRID">Grid</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/grid-masonry" ui-sref="app.ui.grid-masonry" title="Grid Masonry" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.GRID_MASONRY">Grid Masonry</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/typo" ui-sref="app.ui.typo" title="Typography" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.TYPO">Typography</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/palette" ui-sref="app.ui.palette" title="Palette" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.component.PALETTE">Palette</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/ui/localization" ui-sref="app.ui.localization" title="Localization" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Localization</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.forms')}">
+                           <a href="" title="Forms" ripple="">
+                              <em class="sidebar-item-icon icon-book"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.form.FORM">Forms</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Forms</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/inputs" ui-sref="app.forms.inputs" title="Inputs" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.form.INPUT">Inputs</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/validation" ui-sref="app.forms.validation" title="Validation" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.form.VALIDATION">Validation</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/wizard" ui-sref="app.forms.wizard" title="Wizard" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.form.WIZARD">Wizard</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/upload" ui-sref="app.forms.upload" title="Upload" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Upload</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/xeditable" ui-sref="app.forms.xeditable" title="xEditable" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>xEditable</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/imagecrop" ui-sref="app.forms.imagecrop" title="Image Crop" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Image Crop</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/uiselect" ui-sref="app.forms.uiselect" title="uiSelect" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>uiSelect</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/forms/slider" ui-sref="app.forms.slider" title="slider" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Range slider</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.tables')}">
+                           <a href="" title="Tables" ripple="">
+                              <em class="sidebar-item-icon icon-grid"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.table.TABLE">Tables</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Tables</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/tables/responsive" ui-sref="app.tables.responsive" title="Responsive" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.table.RESPONSIVE">Responsive</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/tables/ngtable" ui-sref="app.tables.ngtable" title="ngTables" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>ngTables</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/tables/xeditable" ui-sref="app.tables.xeditable" title="xEditable" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>xEditable</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/tables/datatables" ui-sref="app.tables.datatables" title="Datables" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Datables</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.charts')}">
+                           <a href="" title="Flot" ripple="">
+                              <em class="sidebar-item-icon icon-bar-graph"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.CHART">Charts</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Charts</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/charts/flot" ui-sref="app.charts.flot" title="Flot" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Flot</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/charts/pie" ui-sref="app.charts.pie" title="Pie Charts" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Pie</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.maps')}">
+                           <a href="" title="Maps" ripple="">
+                              <em class="sidebar-item-icon icon-map"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.map.MAP">Maps</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Maps</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/maps/google" ui-sref="app.maps.google" title="Google Maps" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.map.GOOGLE">Google Map</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/maps/vector" ui-sref="app.maps.vector" title="Vector Maps" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.map.VECTOR">Vector Map</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.icons')}">
+                           <a href="" title="Icons" ripple="">
+                              <em class="sidebar-item-icon icon-play"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.icon.ICON">Icons</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Icons</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/icons/feather" ui-sref="app.icons.feather" title="Feather Icons" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.icon.FEATHER">Feather Icons</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/icons/fa" ui-sref="app.icons.fa" title="Font Awesome" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.icon.FA">Font Awesome</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/icons/climacon" ui-sref="app.icons.climacon" title="Climacons" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.icon.CLIMA">Climacons</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/icons/weather" ui-sref="app.icons.weather" title="Weather Icons" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.icon.WEATHER">Weather Icons</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <hr>
+                        </li>
+                        <li class="nav-heading">
+                           <span class="text-muted">Extras</span>
+                        </li>
+                        <li ng-class="{active:$state.includes('app.extras')}">
+                           <a href="" title="Extras" ripple="">
+                              <em class="sidebar-item-icon icon-ribbon"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span>Extras</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Extras</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/calendar" ui-sref="app.extras.calendar" title="Calendar" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.app.CALENDAR">Calendar</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/tasks" ui-sref="app.extras.tasks" title="Tasks List" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.app.TASK">Tasks</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/fh/chat" ui-sref="app-fh.chat" title="Chat" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Chat</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li>
+                                 <hr>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/invoice" ui-sref="app.extras.invoice" title="Invoice" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.INVOICE">Invoice</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/price" ui-sref="app.extras.price" title="Price" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.PRICE">Price Table</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/search" ui-sref="app.extras.search" title="Search" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.SEARCH">Search</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/timeline" ui-sref="app.extras.timeline" title="Timeline" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Timeline</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/projects" ui-sref="app.extras.projects" title="Projects" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Projects</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/gallery" ui-sref="app.extras.gallery" title="Gallery" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Gallery</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/profile" ui-sref="app.extras.profile" title="Profile" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span>Profile</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/app/extras/template" ui-sref="app.extras.template" title="Template" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.BLANK">Blank Template</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <a href="" title="Pages" ripple="">
+                              <em class="sidebar-item-icon icon-stack"></em>
+                              <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                              <span class="ng-scope" translate="sidebar.nav.pages.PAGES">Pages</span>
+                           <span class="ripple"></span></a>
+                           <ul class="nav sidebar-subnav">
+                              <li class="sidebar-subnav-header">
+                                 <a>
+                                    <em class="sidebar-item-icon fa fa-angle-right"></em>Pages</a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/page/login" ui-sref="page.login" title="Login" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.LOGIN">Login</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/page/register" ui-sref="page.register" title="Sign up" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.REGISTER">Register</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/page/recover" ui-sref="page.recover" title="Recover Password" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.RECOVER">Recover password</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                              <li ui-sref-active="active">
+                                 <a href="#/page/lock" ui-sref="page.lock" title="Lock" ripple="">
+                                    <em class="sidebar-item-icon"></em>
+                                    <span class="ng-scope" translate="sidebar.nav.pages.LOCK">Lock</span>
+                                 <span class="ripple"></span></a>
+                              </li>
+                           </ul>
+                        </li>
+                        <li>
+                           <a href="http://geedmo.com/themes/naut/v1.2/html5jquery/dist" title="Static" ripple="" class="bg-primary">
+                              <em class="text-white sidebar-item-icon fa fa-html5"></em>
+                              <span class="text-white">Static Version</span>
+                           <span class="ripple"></span></a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+            <!-- END Sidebar--></aside>
+            <!-- Main-->
+            <section class="ng-scope">
+           <!-- Content-->
+           <!-- uiView:  --><div ui-view="" autoscroll="false" ng-class="app.views.animation" class="app ng-scope ng-fadeInLeft2"><div class="app-view-header ng-scope">Dashboard
+           <small class="ng-binding" ng-bind="app.name + ' - ' + app.description">Naut - Bootstrap + AngularJS</small>
+        </div>
+        <div ng-controller="DashboardController as dashboard" class="row ng-scope">
+           <!-- START dashboard content-->
+           <div class="col-lg-9 fw-boxed">
+              <!-- START Tabbed panel-->
+              <div ng-init="hpanel = [true, false, false, false]" class="panel panel-default">
+                 <div class="row">
+                    <div class="col-md-4">
+                       <div class="row row-flush text-center text-muted m0">
+                          <div ripple="" ng-click="hpanel = [true, false, false, false]" ng-class="{'bg-primary': hpanel[0]}" class="col-xs-3 col-md-6 bb br pv-xxl clickable bg-primary">
+                             <em class="icon-pie-graph fa-2x mv"></em>
+                          <span class="ripple"></span></div>
+                          <div ripple="" ng-click="hpanel = [false, true, false, false]" ng-class="{'bg-purple': hpanel[1]}" class="col-xs-3 col-md-6 bb br pv-xxl clickable">
+                             <em class="icon-head fa-2x mv"></em>
+                          <span class="ripple"></span></div>
+                          <div ripple="" ng-click="hpanel = [false, false, true, false]" ng-class="{'bg-pink': hpanel[2]}" class="col-xs-3 col-md-6 bb-lg br pv-xxl clickable">
+                             <em class="icon-share fa-2x mv"></em>
+                          <span class="ripple"></span></div>
+                          <div ripple="" ng-click="hpanel = [false, false, false, true]" ng-class="{'bg-amber': hpanel[3]}" class="col-xs-3 col-md-6 bb-lg br pv-xxl clickable">
+                             <em class="icon-briefcase fa-2x mv"></em>
+                          <span class="ripple"></span></div>
+                       </div>
+                    </div>
+                    <!-- ngIf: hpanel[0] --><div ng-if="hpanel[0]" class="col-md-8 ng-scope">
+                       <div class="row row-table">
+                          <div class="col-sm-6 col-xs-12">
+                             <div class="p">
+                                <div class="row row-flush text-center">
+                                   <div class="col-xs-6">
+                                      <p class="mt-lg">Monthly Income
+                                         </p><div easypiechart="" options="dashboard.pieOptions" percent="dashboard.piePercent1" class="easypie ng-isolate-scope">
+                                            <span class="ng-binding">75</span>
+                                         <canvas width="110" height="110"></canvas></div>
+                                      <p></p>
+                                   </div>
+                                   <div class="col-xs-6">
+                                      <p class="mt-lg">Total Income</p>
+                                      <div easypiechart="" options="dashboard.pieOptions" percent="dashboard.piePercent2" class="easypie ng-isolate-scope">
+                                         <span class="ng-binding">50</span>
+                                      <canvas width="110" height="110"></canvas></div>
+                                   </div>
+                                </div>
+                             </div>
+                          </div>
+                          <div class="col-sm-6 col-xs-12">
+                             <div class="p">Hourly
+                                <div value="35" type="warning" class="progress-xs progress ng-isolate-scope">
+          <div style="width: 35%;" class="progress-bar progress-bar-warning" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="35%" ng-transclude=""></div>
+        </div>Last Month
+                                <div value="10" type="info" class="progress-xs progress ng-isolate-scope">
+          <div style="width: 10%;" class="progress-bar progress-bar-info" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="10%" ng-transclude=""></div>
+        </div>Last Year
+                                <div value="35" type="danger" class="progress-xs m0 progress ng-isolate-scope">
+          <div style="width: 35%;" class="progress-bar progress-bar-danger" ng-class="type &amp;&amp; 'progress-bar-' + type" role="progressbar" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100" ng-style="{width: percent + '%'}" aria-valuetext="35%" ng-transclude=""></div>
+        </div>
+                             </div>
+                          </div>
+                       </div>
+                    </div><!-- end ngIf: hpanel[0] -->
+                    <!-- ngIf: hpanel[1] -->
+                    <!-- ngIf: hpanel[2] -->
+                    <!-- ngIf: hpanel[3] -->
+                 </div>
+              </div>
+              <!-- END Tabbed panel-->
+              <!-- START Panel-->
+              <div class="panel panel-default">
+                 <div class="panel-heading">
+                    <div class="panel-title">
+                       <em class="icon-signal fa-lg text-muted pull-right"></em>Analytics</div>
+                 </div>
+                 <div class="panel-body">
+                    <div class="row">
+                       <div class="col-md-9">
+                          <p class="text-center">
+                             <em>Proin vulputate neque non turpis pellentesque mattis.</em>
+                          </p>
+                          <flot class="ng-isolate-scope" options="dashboard.splineChartOpts" dataset="dashboard.splineData" series="{splines: dashboard.areaSplineSeries}"><div style="width: 100%; height: 220px; padding: 0px; position: relative;"><canvas height="220" width="571" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 571px; height: 220px;" class="flot-base"></canvas><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; font-size: smaller; color: rgb(84, 84, 84);" class="flot-text"><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-x-axis flot-x1-axis xAxis x1Axis"><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 13px; text-align: center;">1</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 52px; text-align: center;">2</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 91px; text-align: center;">3</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 130px; text-align: center;">4</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 169px; text-align: center;">5</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 208px; text-align: center;">6</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 247px; text-align: center;">7</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 287px; text-align: center;">8</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 326px; text-align: center;">9</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 362px; text-align: center;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 401px; text-align: center;">11</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 440px; text-align: center;">12</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 479px; text-align: center;">13</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 518px; text-align: center;">14</div><div class="flot-tick-label tickLabel" style="position: absolute; max-width: 38px; top: 205px; left: 558px; text-align: center;">15</div></div><div style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; display: block;" class="flot-y-axis flot-y1-axis yAxis y1Axis"><div class="flot-tick-label tickLabel" style="position: absolute; top: 193px; left: 5px; text-align: right;">0</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 154px; left: 0px; text-align: right;">10</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 116px; left: 0px; text-align: right;">20</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 77px; left: 0px; text-align: right;">30</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 39px; left: 0px; text-align: right;">40</div><div class="flot-tick-label tickLabel" style="position: absolute; top: 1px; left: 0px; text-align: right;">50</div></div></div><canvas height="220" width="571" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 571px; height: 220px;" class="flot-overlay"></canvas><div class="legend"><div style="position: absolute; width: 77px; height: 58px; top: 13px; right: 13px; background-color: transparent; opacity: 0.85;"> </div><table style="position:absolute;top:13px;right:13px;;font-size:smaller;color:#8394a9"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #2095f2;overflow:hidden"></div></div></td><td class="legendLabel">Campaing1</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #2095f2;overflow:hidden"></div></div></td><td class="legendLabel">Campaing2</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid #2095f2;overflow:hidden"></div></div></td><td class="legendLabel">Campaing3</td></tr></tbody></table></div></div></flot>
+                       </div>
+                       <div class="col-md-3">
+                          <table class="table table-hover mb-lg">
+                             <thead>
+                                <tr>
+                                   <th>Name</th>
+                                   <th class="text-right">Show</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                <tr>
+                                   <td>Campaing 1</td>
+                                   <td class="text-right">
+                                      <label ng-class="'switch-' + app.theme.name" class="switch m0 switch-info">
+                                         <input class="ng-pristine ng-untouched ng-valid" ng-model="dashboard.areaSplineSeries[0]" type="checkbox">
+                                         <span></span>
+                                      </label>
+                                   </td>
+                                </tr>
+                                <tr>
+                                   <td>Campaing 2</td>
+                                   <td class="text-right">
+                                      <label ng-class="'switch-' + app.theme.name" class="switch m0 switch-info">
+                                         <input checked="checked" class="ng-pristine ng-untouched ng-valid" ng-model="dashboard.areaSplineSeries[1]" type="checkbox">
+                                         <span></span>
+                                      </label>
+                                   </td>
+                                </tr>
+                                <tr>
+                                   <td>Campaing 3</td>
+                                   <td class="text-right">
+                                      <label ng-class="'switch-' + app.theme.name" class="switch m0 switch-info">
+                                         <input checked="checked" class="ng-pristine ng-untouched ng-valid" ng-model="dashboard.areaSplineSeries[2]" type="checkbox">
+                                         <span></span>
+                                      </label>
+                                   </td>
+                                </tr>
+                             </tbody>
+                          </table>
+                          <p>
+                             <em>Etiam ultrices mollis placerat. Proin ullamcorper lectus ut libero blandit pretium.</em>
+                          </p>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-md-4">
+                    <!-- START Panel-->
+                    <div class="panel panel-default">
+                       <div class="panel-body">
+                          <em class="pull-right icon-bar-graph-2 text-muted"></em>
+                          <div class="text-center">
+                             <div class="text-lg">31.2 ms</div>
+                             <p class="text-muted">Average response time</p>
+                             <div class="label label-success">
+                                20%
+                                <em class="fa fa-angle-up"></em>
+                             </div>
+                          </div>
+                          <flot options="dashboard.smallChartOpts" dataset="dashboard.smallChartData1" height="110px" class="mt-lg ng-isolate-scope"><div style="width: 100%; height: 110px; padding: 0px; position: relative;"><canvas height="110" width="217" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 217px; height: 110px;" class="flot-base"></canvas><canvas height="110" width="217" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 217px; height: 110px;" class="flot-overlay"></canvas></div></flot>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-4">
+                    <!-- START Panel-->
+                    <div class="panel bg-purple">
+                       <div class="panel-body">
+                          <em class="pull-right icon-thermometer text-muted"></em>
+                          <div class="text-center">
+                             <div class="text-lg">30,300</div>
+                             <p class="text-muted">Total Visits</p>
+                          </div>
+                       </div>
+                       <div class="lead text-center mb">Devices</div>
+                       <div class="list-group">
+                          <a href="" class="bg-purple list-group-item clearfix bg-light b0">
+                             <div class="pull-left">
+                                <em class="fa fa-fw fa-desktop mr"></em>Desktop</div>
+                             <div class="pull-right">10,200</div>
+                          </a>
+                          <a href="" class="bg-purple list-group-item clearfix b0">
+                             <div class="pull-left">
+                                <em class="fa fa-fw fa-tablet mr"></em>Tablet</div>
+                             <div class="pull-right">9,040</div>
+                          </a>
+                          <a href="" class="bg-purple list-group-item clearfix bg-light b0">
+                             <div class="pull-left">
+                                <em class="fa fa-fw fa-mobile mr"></em>Mobile</div>
+                             <div class="pull-right">3,900</div>
+                          </a>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-md-4">
+                    <!-- START Panel-->
+                    <div class="panel panel-default">
+                       <div class="panel-body">
+                          <em class="pull-right icon-bar-graph text-muted"></em>
+                          <div class="text-center">
+                             <div class="text-lg">70%</div>
+                             <p class="text-muted">Consumed resources</p>
+                             <div class="label label-warning">5%
+                                <em class="fa fa-angle-down"></em>
+                             </div>
+                          </div>
+                          <flot options="dashboard.smallChartOpts" dataset="dashboard.smallChartData2" height="110px" class="mt-lg ng-isolate-scope"><div style="width: 100%; height: 110px; padding: 0px; position: relative;"><canvas height="110" width="217" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 217px; height: 110px;" class="flot-base"></canvas><canvas height="110" width="217" style="direction: ltr; position: absolute; left: 0px; top: 0px; width: 217px; height: 110px;" class="flot-overlay"></canvas></div></flot>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <!-- START Responsive table-->
+              <div class="panel panel-default">
+                 <div class="table-responsive">
+                    <table class="table table-bordered table-striped text-center">
+                       <thead>
+                          <tr>
+                             <th class="text-center">Code</th>
+                             <th class="text-center">Files</th>
+                             <th class="text-center">Transactions</th>
+                             <th class="text-center">Request</th>
+                             <th class="text-center">Income</th>
+                             <th class="text-center">Outcome</th>
+                             <th class="text-center">Total</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                          <tr>
+                             <td class="text-bold">#1234</td>
+                             <td>1,232</td>
+                             <td>523</td>
+                             <td>-</td>
+                             <td>
+                                <div class="label label-success text-bold">$ 1,548.00
+                                   <em class="fa fa-fw fa-caret-up"></em>
+                                </div>
+                             </td>
+                             <td>
+                                <div class="label label-danger text-bold">$ 0.00
+                                   <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                             </td>
+                             <td>$ 1,548.00</td>
+                          </tr>
+                          <tr>
+                             <td class="text-bold">#548</td>
+                             <td>1,232</td>
+                             <td>-</td>
+                             <td>300</td>
+                             <td>
+                                <div class="label label-success text-bold">$ 3,548.00
+                                   <em class="fa fa-fw fa-caret-up"></em>
+                                </div>
+                             </td>
+                             <td>
+                                <div class="label label-danger text-bold">$ 1000.00
+                                   <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                             </td>
+                             <td>$ 2,548.00</td>
+                          </tr>
+                          <tr>
+                             <td class="text-bold">#654</td>
+                             <td>1,232</td>
+                             <td>523</td>
+                             <td>57889</td>
+                             <td>
+                                <div class="label label-success text-bold">$ 10,256.00
+                                   <em class="fa fa-fw fa-caret-up"></em>
+                                </div>
+                             </td>
+                             <td>
+                                <div class="label label-danger text-bold">$ 10,000.00
+                                   <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                             </td>
+                             <td>$ 256.00</td>
+                          </tr>
+                          <tr>
+                             <td class="text-bold">#3266</td>
+                             <td>-</td>
+                             <td>523</td>
+                             <td>1200</td>
+                             <td>
+                                <div class="label label-success text-bold">$ 11,100.50
+                                   <em class="fa fa-fw fa-caret-up"></em>
+                                </div>
+                             </td>
+                             <td>
+                                <div class="label label-danger text-bold">$ 100.00
+                                   <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                             </td>
+                             <td>$ 11,000.50</td>
+                          </tr>
+                          <tr>
+                             <td class="text-bold">#548</td>
+                             <td>1,232</td>
+                             <td>-</td>
+                             <td>300</td>
+                             <td>
+                                <div class="label label-success text-bold">$ 3,548.00
+                                   <em class="fa fa-fw fa-caret-up"></em>
+                                </div>
+                             </td>
+                             <td>
+                                <div class="label label-danger text-bold">$ 1000.00
+                                   <em class="fa fa-fw fa-caret-down"></em>
+                                </div>
+                             </td>
+                             <td>$ 2,548.00</td>
+                          </tr>
+                       </tbody>
+                    </table>
+                 </div>
+                 <div class="panel-footer">
+                    <div class="row">
+                       <div class="col-md-4 col-xs-6">
+                          <div class="input-group input-group-sm">
+                             <input placeholder="Search" class="form-control" type="text">
+                             <span class="input-group-btn">
+                                <button type="button" class="btn btn-sm btn-default">Search</button>
+                             </span>
+                          </div>
+                       </div>
+                       <div class="col-md-4 col-md-offset-4 col-xs-6">
+                          <div class="input-group input-group-sm pull-right">
+                             <select class="form-control">
+                                <option selected="selected" value="0">Bulk action</option>
+                                <option value="1">Delete</option>
+                                <option value="2">Clone</option>
+                                <option value="3">Export</option>
+                             </select>
+                             <span class="input-group-btn">
+                                <button class="btn btn-sm btn-default">Apply</button>
+                             </span>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <!-- END Responsive table-->
+           </div>
+           <!-- END dashboard content-->
+           <!-- START dashboard sidebar-->
+           <aside class="col-lg-3 fw-boxed">
+              <div class="row">
+                 <div class="col-lg-6 col-sm-3 col-xs-6">
+                    <div ripple="" class="panel panel-default">
+                       <div ng-class="'bg-' + app.theme.name" class="panel-body bg-info">
+                          <h1 class="text-thin mt">150</h1>
+                          <div class="text-right text-sm text-muted">Transactions</div>
+                       </div>
+                    <span class="ripple"></span></div>
+                 </div>
+                 <div class="col-lg-6 col-sm-3 col-xs-6">
+                    <div ripple="" class="panel panel-default">
+                       <div class="panel-body">
+                          <h1 class="text-thin mt">700</h1>
+                          <div class="text-right text-sm text-muted">Users</div>
+                       </div>
+                    <span class="ripple"></span></div>
+                 </div>
+                 <div class="col-lg-6 col-sm-3 col-xs-6">
+                    <div ripple="" class="panel panel-default">
+                       <div class="panel-body">
+                          <h1 class="text-thin mt">699</h1>
+                          <div class="text-right text-sm text-muted">Views</div>
+                       </div>
+                    <span class="ripple"></span></div>
+                 </div>
+                 <div class="col-lg-6 col-sm-3 col-xs-6">
+                    <div ripple="" class="panel panel-default">
+                       <div ng-class="'bg-' + app.theme.name" class="panel-body bg-info">
+                          <h1 class="text-thin mt">96</h1>
+                          <div class="text-right text-sm text-muted">Downloads</div>
+                       </div>
+                    <span class="ripple"></span></div>
+                 </div>
+                 <div class="col-xs-12">
+                    <div class="panel panel-default">
+                       <div ng-class="'bg-' + app.theme.name" class="panel-body bg-info">
+                          <h2 class="text-thin mt">New contacts</h2>
+                          <div class="clearfix">
+                             <div class="pull-right">
+                                <ul class="list-inline m0">
+                                   <li class="p0">
+                                      <a href="">
+                                         <img src="images/02.jpg" alt="Follower" class="img-responsive img-circle thumb24">
+                                      </a>
+                                   </li>
+                                   <li class="p0">
+                                      <a href="">
+                                         <img src="images/01.jpg" alt="Follower" class="img-responsive img-circle thumb24">
+                                      </a>
+                                   </li>
+                                   <li class="p0">
+                                      <a href="">
+                                         <img src="images/03.jpg" alt="Follower" class="img-responsive img-circle thumb24">
+                                      </a>
+                                   </li>
+                                   <li class="p0">
+                                      <a href="">
+                                         <img src="images/04.jpg" alt="Follower" class="img-responsive img-circle thumb24">
+                                      </a>
+                                   </li>
+                                   <li class="p0">
+                                      <a href="" class="v-middle">
+                                         <strong>+7</strong>
+                                      </a>
+                                   </li>
+                                </ul>
+                             </div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+              <div class="row">
+                 <div class="col-lg-12 col-md-6">
+                    <div ng-class="'panel-' + app.theme.name" class="panel panel-info">
+                       <div class="panel-heading">
+                          <div ng-class="'bg-' + app.theme.name" class="panel-title bg-info">
+                             <em class="icon-clock fa-lg pull-right text-muted"></em>Activity</div>
+                       </div>
+                       <div class="panel-body pt0">
+                          <div class="smoothy">
+                             <div style="position: relative; overflow: hidden; width: auto; height: 285px;" class="slimScrollDiv"><scrollable style="overflow: hidden; width: auto; height: 285px;" class="pt">
+                                <!-- START timeline-->
+                                <ul class="timeline-alt">
+                                   <li data-datetime="14 Oct" class="timeline-separator"></li>
+                                   <!-- START timeline item-->
+                                   <li>
+                                      <div class="timeline-badge timeline-badge-sm thumb-32 bg-purple">
+                                         <em class="fa fa-users"></em>
+                                      </div>
+                                      <div class="timeline-date">
+                                         <time datetime="10m"></time>
+                                      </div>
+                                      <div class="timeline-panel">
+                                         <strong>Client Meeting</strong>
+                                         <div class="text-muted">Green Offfice - Av 123 St Floor 2</div>
+                                      </div>
+                                   </li>
+                                   <!-- END timeline item-->
+                                   <!-- START timeline item-->
+                                   <li>
+                                      <div class="timeline-badge timeline-badge-sm bg-amber">
+                                         <em class="fa fa-phone"></em>
+                                      </div>
+                                      <div class="timeline-date">
+                                         <time datetime="1h"></time>
+                                      </div>
+                                      <div class="timeline-panel">
+                                         <strong>Call</strong>
+                                         <div class="text-muted">From: <a href="tel:+011231987">Michael</a>.
+                                            <em>No message left.</em>
+                                         </div>
+                                      </div>
+                                   </li>
+                                   <!-- END timeline item-->
+                                   <!-- START timeline item-->
+                                   <li>
+                                      <div class="timeline-badge timeline-badge-sm bg-info">
+                                         <em class="fa fa-envelope"></em>
+                                      </div>
+                                      <div class="timeline-date">
+                                         <time datetime="3h"></time>
+                                      </div>
+                                      <div class="timeline-panel">
+                                         <strong>New invitation</strong>
+                                         <div class="text-muted">From:
+                                            <strong>UX Design Team</strong>
+                                         </div>
+                                      </div>
+                                   </li>
+                                   <!-- END timeline item-->
+                                   <li data-datetime="13 Oct" class="timeline-separator"></li>
+                                   <!-- START timeline item-->
+                                   <li>
+                                      <div class="timeline-badge timeline-badge-sm bg-warning">
+                                         <em class="fa fa-upload"></em>
+                                      </div>
+                                      <div class="timeline-date">
+                                         <time datetime="9am"></time>
+                                      </div>
+                                      <div class="timeline-panel">
+                                         <strong>File upload</strong>
+                                         <a href="">
+                                            <div class="text-bold">angular+bs.zip</div>
+                                         </a>
+                                      </div>
+                                   </li>
+                                   <!-- END timeline item-->
+                                </ul>
+                                <!-- END timeline-->
+                             </scrollable><div style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 182.528px;" class="slimScrollBar"></div><div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;" class="slimScrollRail"></div></div>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+                 <div class="col-lg-12 col-md-6">
+                    <div ng-class="'panel-' + app.theme.name" class="panel panel-info">
+                       <div class="panel-heading">
+                          <div ng-class="'bg-' + app.theme.name" class="panel-title bg-info">
+                             <em class="icon-speech-bubble fa-lg pull-right text-muted"></em>Team chat</div>
+                       </div>
+                       <div class="panel-body pt0">
+                          <div class="smoothy">
+                             <div style="position: relative; overflow: hidden; width: auto; height: 285px;" class="slimScrollDiv"><scrollable style="overflow: hidden; width: auto; height: 285px;" class="pt">
+                                <ul class="chat">
+                                   <li class="left clearfix">
+                                      <span class="chat-img pull-left">
+                                         <img src="images/01.jpg" alt="Image" class="img-circle thumb48">
+                                      </span>
+                                      <div class="chat-body clearfix">
+                                         <div class="chat-header">
+                                            <a href="" class="text-inverse">
+                                               <strong>Florence Douglas</strong>
+                                            </a>
+                                            <small class="pull-right text-muted">
+                                               <span class="fa fa-time"></span>12m</small>
+                                         </div>
+                                         <div class="chat-msg">Suspendisse nisl nulla, interdum at fermentum eget, adipiscing in elit.</div>
+                                      </div>
+                                   </li>
+                                   <li class="right clearfix">
+                                      <span class="chat-img pull-right">
+                                         <img src="images/03.jpg" alt="Image" class="img-circle thumb48">
+                                      </span>
+                                      <div class="chat-body clearfix">
+                                         <div class="chat-header">
+                                            <small class="text-muted">
+                                               <span class="fa fa-time"></span>13m</small>
+                                            <a href="" class="text-inverse">
+                                               <strong class="pull-right">Jon Elliott</strong>
+                                            </a>
+                                         </div>
+                                         <div class="chat-msg">Donec consequat venenatis orci, et sagittis risus pretium eget.</div>
+                                      </div>
+                                   </li>
+                                   <li class="left clearfix">
+                                      <span class="chat-img pull-left">
+                                         <img src="images/02.jpg" alt="Image" class="img-circle thumb48">
+                                      </span>
+                                      <div class="chat-body clearfix">
+                                         <div class="chat-header">
+                                            <a href="" class="text-inverse">
+                                               <strong>Joel Miles</strong>
+                                            </a>
+                                            <small class="pull-right text-muted">
+                                               <span class="fa fa-time"></span>14m</small>
+                                         </div>
+                                         <div class="chat-msg">Mauris eleifend, libero nec cursus lacinia, tellus est pharetra orci, et pretium urna felis eget neque.</div>
+                                      </div>
+                                   </li>
+                                   <li class="right clearfix">
+                                      <span class="chat-img pull-right">
+                                         <img src="images/03.jpg" alt="Image" class="img-circle thumb48">
+                                      </span>
+                                      <div class="chat-body clearfix">
+                                         <div class="chat-header">
+                                            <small class="text-muted">
+                                               <span class="fa fa-time"></span>15m</small>
+                                            <a href="" class="text-inverse">
+                                               <strong class="pull-right">Jon Elliott</strong>
+                                            </a>
+                                         </div>
+                                         <div class="chat-msg">Sed semper diam vitae purus tristique at scelerisque massa ultricies. Aliquam non eros dui.</div>
+                                      </div>
+                                   </li>
+                                </ul>
+                             </scrollable><div style="background: rgb(0, 0, 0) none repeat scroll 0% 0%; width: 7px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px; height: 120.333px;" class="slimScrollBar"></div><div style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51) none repeat scroll 0% 0%; opacity: 0.2; z-index: 90; right: 1px;" class="slimScrollRail"></div></div>
+                          </div>
+                       </div>
+                       <div class="panel-footer">
+                          <div class="input-group input-group-sm">
+                             <input placeholder="Type a message ..." class="form-control" type="text">
+                             <span class="input-group-btn">
+                                <button type="button" class="btn btn-info">
+                                   <small>Post</small>
+                                </button>
+                             </span>
+                          </div>
+                       </div>
+                    </div>
+                 </div>
+              </div>
+           </aside>
+           <!-- END dashboard sidebar-->
+        </div></div>
+        </section>
+            <!-- Page footer-->
+            <!-- ngInclude: 'templates/footer.html' --><footer class="ng-scope" ng-include="'templates/footer.html'"><span class="ng-binding ng-scope">© 2015 - Naut</span></footer></div>
+           <!-- Settings-->
+           <!-- ngInclude: 'templates/settings.html' -->
+           <div ng-include="'templates/settings.html'">
+                <div class="settings-inner ng-scope">
+                    <div ng-click="showSettings = !showSettings" class="settings-button">
+      <em class="icon-cog"></em>
+   </div>
+                    <div ng-controller="SettingsController as config" class="settings ng-scope">
+      <div class="settings-inner">
+         <div class="settings-content">
+            <div class="pt ph">
+               <p class="text-muted">THEMES</p>
+               <div class="clearfix mb">
+                  <!-- ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="0" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-primary" ng-class="theme.brand"></li>
+                              <li class="bg-primary" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="1" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-purple" ng-class="theme.brand"></li>
+                              <li class="bg-purple" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="2" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-success" ng-class="theme.brand"></li>
+                              <li class="bg-success" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="3" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-warning" ng-class="theme.brand"></li>
+                              <li class="bg-warning" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input checked="checked" value="4" class="ng-untouched ng-valid ng-dirty ng-valid-parse" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-info" ng-class="theme.brand"></li>
+                              <li class="bg-info" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="5" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-danger" ng-class="theme.brand"></li>
+                              <li class="bg-danger" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="6" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-pink" ng-class="theme.brand"></li>
+                              <li class="bg-pink" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input value="7" class="ng-untouched ng-valid ng-dirty" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" type="radio">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li class="bg-white" ng-class="theme.sidebar"></li>
+                              <li class="bg-amber" ng-class="theme.brand"></li>
+                              <li class="bg-amber" ng-class="theme.topbar"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes -->
+               </div>
+            </div>
+            <hr>
+            <div class="p">
+               <p class="text-muted">LAYOUT</p>
+               <div class="clearfix">
+                  <p class="pull-left">Fixed</p>
+                  <div class="pull-right">
+                     <label class="switch switch-info">
+                        <input class="ng-valid ng-dirty ng-valid-parse ng-touched" ng-model="app.layout.isFixed" ng-disabled="app.layout.isMaterial" type="checkbox">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+               <div class="clearfix">
+                  <p class="pull-left">Boxed</p>
+                  <div class="pull-right">
+                     <label class="switch switch-info">
+                        <input class="ng-valid ng-dirty ng-touched" ng-model="app.layout.isBoxed" ng-disabled="app.layout.isMaterial" type="checkbox">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+               <div class="clearfix">
+                  <p class="pull-left">Material</p>
+                  <div class="pull-right">
+                     <label ng-click="app.layout.isBoxed = false; app.layout.isFixed = true" class="switch switch-info">
+                        <input class="ng-valid ng-dirty ng-touched" ng-model="app.layout.isMaterial" ng-disabled="app.layout.isDocked || app.sidebar.isMini" type="checkbox">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="p">
+               <p class="text-muted">SIDEBAR</p>
+               <div class="clearfix">
+                  <p class="pull-left">Mini</p>
+                  <div class="pull-right">
+                     <label ng-click="app.layout.isMaterial = false;" class="switch switch-info">
+                        <input class="ng-valid ng-dirty ng-valid-parse ng-touched" ng-model="app.sidebar.isMini" type="checkbox">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="p">
+               <p class="text-muted">FOOTER</p>
+               <div class="clearfix">
+                  <p class="pull-left">Hidden</p>
+                  <div class="pull-right">
+                     <label class="switch switch-info">
+                        <input checked="checked" class="ng-valid ng-dirty ng-touched" ng-model="app.footer.hidden" type="checkbox">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="p">
+               <!-- START Language list-->
+               <div class="pull-right">
+                  <div dropdown="" is-open="language.listIsOpen" class="btn-group btn-group-sm"><a aria-expanded="false" aria-haspopup="true" dropdown-toggle="" class="dropdown-toggle clickable ng-binding">English<span class="caret"></span></a>
+                     <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInLeft2">
+                        <!-- ngRepeat: (localeId, langName) in language.available --><li class="ng-scope" ng-repeat="(localeId, langName) in language.available"><a class="ng-binding" ng-click="language.set(localeId, $event)" href="">English</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available --><li class="ng-scope" ng-repeat="(localeId, langName) in language.available"><a class="ng-binding" ng-click="language.set(localeId, $event)" href="">Español</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available --><li class="ng-scope" ng-repeat="(localeId, langName) in language.available"><a class="ng-binding" ng-click="language.set(localeId, $event)" href="">Português</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available --><li class="ng-scope" ng-repeat="(localeId, langName) in language.available"><a class="ng-binding" ng-click="language.set(localeId, $event)" href="">中国简体</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available -->
+                     </ul>
+                  </div>
+               </div>
+               <!-- END Language list    -->
+               <p class="text-muted">LANGUAGE</p>
+            </div>
+         </div>
+      </div>
+   </div>
+                </div>
+           </div>
+   <!-- End Settings-->
+   <!-- Layer Morph -->
+   <div class="layer-morph-overlay">
+      <div style="height: 2987.96px; width: 2987.96px; top: -1419px; left: -214px;" class="layer-morph-inner bg-info"></div>
+   </div>
+   <div layer-morph-close="" class="layer-morph-close">
+      <em class="icon-cross"></em>
+   </div>
+   <div class="layer-morph-container bg-info">
+      <div class="layer-morph-wrapper">
+         <!-- ngInclude: 'templates/layer-search.html' --><div id="layer-search" ng-include="'templates/layer-search.html'" class="layer-morph ng-scope"><form class="ng-pristine ng-valid ng-scope" action="">
+   <p class="help-block">Type and hit enter to search</p>
+   <input placeholder="I'm looking for..." ng-model="searchTerm" class="form-control input-huge ng-pristine ng-untouched ng-valid" type="text">
+   <button type="submit" class="hidden">Search</button>
+</form>
+<div class="row ng-scope">
+   <div class="col-md-4 col-sm-6 pv">
+      <h4 class="text-bold pv-lg">People (4)</h4>
+      <br>
+      <ul class="list-unstyled">
+         <!-- START User-->
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="images/05.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-success point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Marc Fuller</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+         <!-- START User-->
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="images/06.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-success point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Wade Wade</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+         <!-- START User-->
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="images/07.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-danger point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Alan Boyd</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+         <!-- START User-->
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="images/01.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-danger point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Ryan Carr</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+      </ul>
+   </div>
+   <div class="col-md-4 col-sm-6 pv">
+      <h4 class="text-bold pv-lg">Pages (3)</h4>
+      <br>
+      <ul class="list-unstyled">
+         <li class="media">
+            <div class="media-left media-middle">
+               <div class="thumb40 bg-success circle text-center text-bold">D</div>
+            </div>
+            <div class="media-body">
+               <div class="media-heading clearfix"><a href="#/app/dashboard" ui-sref="app.dashboard" layer-morph-close="" class="pull-left text-md">Dashboard</a>
+                  <small class="text-muted pull-right mt">3 matches</small>
+               </div>
+            </div>
+         </li>
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <div class="thumb40 bg-purple circle text-center text-bold">P</div>
+            </div>
+            <div class="media-body">
+               <div class="media-heading clearfix"><a href="#/app/extras/profile" ui-sref="app.extras.profile" layer-morph-close="" class="pull-left text-md">Profile</a>
+                  <small class="text-muted pull-right mt">3 matches</small>
+               </div>
+            </div>
+         </li>
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <div class="thumb40 bg-danger circle text-center text-bold">P</div>
+            </div>
+            <div class="media-body">
+               <div class="media-heading clearfix"><a href="#/app/extras/projects" ui-sref="app.extras.projects" layer-morph-close="" class="pull-left text-md">Projects</a>
+                  <small class="text-muted pull-right mt">2 match(es)</small>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </div>
+</div></div>
+         <div class="layer-morph-footer">Naut</div>
+      </div>
+   </div>
+   <!-- End Layer Morph -->
+   <!--<script src="js/vendor-669d84b7.js"></script>
+   <script src="js/application-0c8ca458.js"></script>
+-->
+
+<div style="display: none; position: absolute; background: rgb(255, 255, 255) none repeat scroll 0% 0%; z-index: 1040; padding: 0.4em 0.6em; border-radius: 0.5em; font-size: 0.8em; border: 1px solid rgb(17, 17, 17); white-space: nowrap; left: 727px; top: 1135px;" id="flotTip"></div>
+<!--<script src="js/main.js"></script>-->
+</body></html>

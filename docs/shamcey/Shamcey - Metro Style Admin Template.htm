@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class=" js rgba multiplebgs backgroundsize borderradius boxshadow textshadow opacity cssanimations cssgradients csstransitions fontface" style=""><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shamcey - Metro Style Admin Template</title>
+<link rel="stylesheet" href="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/style.css" type="text/css">
+<link rel="stylesheet" href="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/responsive-tables.css">
+
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery-1.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery-migrate-1.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery-ui-1.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/bootstrap.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery_004.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery_003.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/modernizr.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/responsive-tables.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/jquery_002.js"></script>
+<script type="text/javascript" src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/custom.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function(){
+        // dynamic table
+        jQuery('#dyntable').dataTable({
+            "sPaginationType": "full_numbers",
+            "aaSortingFixed": [[0,'asc']],
+            "fnDrawCallback": function(oSettings) {
+                jQuery.uniform.update();
+            }
+        });
+        
+        jQuery('#dyntable2').dataTable( {
+            "bScrollInfinite": true,
+            "bScrollCollapse": true,
+            "sScrollY": "300px"
+        });
+        
+    });
+</script>
+</head>
+
+<body>
+
+<div class="topbar"><a class="barmenu"></a></div><div id="mainwrapper" class="mainwrapper">
+    
+    <div class="header">
+        <div class="logo">
+            <a href="http://demo.themepixels.com/webpage/shamcey/dashboard.html"><img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/logo.png" alt=""></a>
+        </div>
+        <div class="headerinner">
+            <ul class="headmenu">
+                <li class="odd">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <span class="count">4</span>
+                        <span class="head-icon head-message"></span>
+                        <span class="headmenu-label">Messages</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-header">Messages</li>
+                        <li><a href=""><span class="icon-envelope"></span> New message from <strong>Jack</strong> <small class="muted"> - 19 hours ago</small></a></li>
+                        <li><a href=""><span class="icon-envelope"></span> New message from <strong>Daniel</strong> <small class="muted"> - 2 days ago</small></a></li>
+                        <li><a href=""><span class="icon-envelope"></span> New message from <strong>Jane</strong> <small class="muted"> - 3 days ago</small></a></li>
+                        <li><a href=""><span class="icon-envelope"></span> New message from <strong>Tanya</strong> <small class="muted"> - 1 week ago</small></a></li>
+                        <li><a href=""><span class="icon-envelope"></span> New message from <strong>Lee</strong> <small class="muted"> - 1 week ago</small></a></li>
+                        <li class="viewmore"><a href="http://demo.themepixels.com/webpage/shamcey/messages.html">View More Messages</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#">
+                    <span class="count">10</span>
+                    <span class="head-icon head-users"></span>
+                    <span class="headmenu-label">New Users</span>
+                    </a>
+                    <ul class="dropdown-menu newusers">
+                        <li class="nav-header">New Users</li>
+                        <li>
+                            <a href="">
+                                <img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/thumb1.png" alt="" class="userthumb">
+                                <strong>Draniem Daamul</strong>
+                                <small>April 20, 2013</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/thumb2.png" alt="" class="userthumb">
+                                <strong>Shamcey Sindilmaca</strong>
+                                <small>April 19, 2013</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/thumb3.png" alt="" class="userthumb">
+                                <strong>Nusja Paul Nawancali</strong>
+                                <small>April 19, 2013</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/thumb4.png" alt="" class="userthumb">
+                                <strong>Rose Cerona</strong>
+                                <small>April 18, 2013</small>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/thumb5.png" alt="" class="userthumb">
+                                <strong>John Doe</strong>
+                                <small>April 16, 2013</small>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="odd">
+                    <a class="dropdown-toggle" data-toggle="dropdown" data-target="#">
+                    <span class="count">1</span>
+                    <span class="head-icon head-bar"></span>
+                    <span class="headmenu-label">Statistics</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-header">Statistics</li>
+                        <li><a href=""><span class="icon-align-left"></span> New Reports from <strong>Products</strong> <small class="muted"> - 19 hours ago</small></a></li>
+                        <li><a href=""><span class="icon-align-left"></span> New Statistics from <strong>Users</strong> <small class="muted"> - 2 days ago</small></a></li>
+                        <li><a href=""><span class="icon-align-left"></span> New Statistics from <strong>Comments</strong> <small class="muted"> - 3 days ago</small></a></li>
+                        <li><a href=""><span class="icon-align-left"></span> Most Popular in <strong>Products</strong> <small class="muted"> - 1 week ago</small></a></li>
+                        <li><a href=""><span class="icon-align-left"></span> Most Viewed in <strong>Blog</strong> <small class="muted"> - 1 week ago</small></a></li>
+                        <li class="viewmore"><a href="http://demo.themepixels.com/webpage/shamcey/charts.html">View More Statistics</a></li>
+                    </ul>
+                </li>
+                <li class="right">
+                    <div class="userloggedinfo">
+                        <img src="Shamcey%20-%20Metro%20Style%20Admin%20Template_files/thumb1.png" alt="">
+                        <div class="userinfo">
+                            <h5>Juan Dela Cruz <small>- juan@themepixels.com</small></h5>
+                            <ul>
+                                <li><a href="http://demo.themepixels.com/webpage/shamcey/editprofile.html">Edit Profile</a></li>
+                                <li><a href="">Account Settings</a></li>
+                                <li><a href="http://demo.themepixels.com/webpage/shamcey/index.html">Sign Out</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+            </ul><!--headmenu-->
+        </div>
+    </div>
+    
+    <div class="leftpanel">
+        
+        <div class="leftmenu">        
+            <ul class="nav nav-tabs nav-stacked">
+            	<li class="nav-header">Navigation</li>
+                <li><a href="http://demo.themepixels.com/webpage/shamcey/dashboard.html"><span class="iconfa-laptop"></span> Dashboard</a></li>
+                <li><a href="http://demo.themepixels.com/webpage/shamcey/buttons.html"><span class="iconfa-hand-up"></span> Buttons &amp; Icons</a></li>
+                <li class="dropdown"><a href=""><span class="iconfa-pencil"></span> Forms</a>
+                    <ul>
+                    	<li><a href="http://demo.themepixels.com/webpage/shamcey/forms.html">Form Styles</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/wizards.html">Wizard Form</a></li>
+                        <li class="active"><a href="http://demo.themepixels.com/webpage/shamcey/wysiwyg.html">WYSIWYG</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/registration.html">Registration Page</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href=""><span class="iconfa-briefcase"></span> UI Elements &amp; Widgets</a>
+                	<ul>
+                    	<li><a href="http://demo.themepixels.com/webpage/shamcey/elements.html">Theme Components</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/bootstrap.html">Bootstrap Components</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/boxes.html">Headers &amp; Boxes</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown active"><a href=""><span class="iconfa-th-list"></span> Tables</a>
+                	<ul style="display:block;">
+                    	<li><a href="http://demo.themepixels.com/webpage/shamcey/table-static.html">Static Table</a></li>
+                     <li class="active"><a href="http://demo.themepixels.com/webpage/shamcey/table-dynamic.html">Dynamic Table</a></li>
+                  </ul>
+                </li>
+
+                <li><a href="http://demo.themepixels.com/webpage/shamcey/media.html"><span class="iconfa-picture"></span> Media Manager</a></li>
+                <li><a href="http://demo.themepixels.com/webpage/shamcey/typography.html"><span class="iconfa-font"></span> Typography</a></li>
+                <li><a href="http://demo.themepixels.com/webpage/shamcey/charts.html"><span class="iconfa-signal"></span> Graph &amp; Charts</a></li>
+                <li class="dropdown"><a href=""><span class="iconfa-envelope"></span> Messaging</a>
+                    <ul>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/messages.html">Mailbox</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/chat.html">Chat Page</a></li>
+                    </ul>
+                </li>
+                <li><a href="http://demo.themepixels.com/webpage/shamcey/calendar.html"><span class="iconfa-calendar"></span> Calendar</a></li>
+                <li class="dropdown"><a href=""><span class="iconfa-book"></span> Other Pages</a>
+                    <ul>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/404.html">404 Error Page</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/editprofile.html">Edit Profile</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/invoice.html">Invoice Page</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/discussion.html">Discussion Page</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/topic.html">View Topic Page</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/blog.html">Grid Blog List</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/blank.html">Blank Page</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/timeline.html">Timeline Page</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/people.html">People Directory</a></li>
+                        <li><a href="http://demo.themepixels.com/webpage/shamcey/lockscreen.html">Lock Screen</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a href=""><span class="iconfa-th-list"></span> Three Level Menu Sample</a>
+                	<ul>
+                    	<li class="dropdown"><a href="">Second Level Menu</a>
+                        <ul>
+                            <li><a href="">Third Level Menu</a></li>
+                            <li><a href="">Another Third Level Menu</a></li>
+                        </ul>
+                     </li>
+                    </ul>
+                </li>
+            </ul>
+        </div><!--leftmenu-->
+        
+    </div><!-- leftpanel -->
+    
+    <div class="rightpanel">
+        
+        <ul class="breadcrumbs">
+            <li><a href="http://demo.themepixels.com/webpage/shamcey/dashboard.html"><i class="iconfa-home"></i></a> <span class="separator"></span></li>
+            <li><a href="http://demo.themepixels.com/webpage/shamcey/table-static.html">Tables</a> <span class="separator"></span></li>
+            <li>Table Dynamic</li>
+            
+            <li class="right">
+                <a href="" data-toggle="dropdown" class="dropdown-toggle"><i class="icon-tint"></i> Color Skins</a>
+                <ul class="dropdown-menu pull-right skin-color">
+                    <li><a href="http://demo.themepixels.com/webpage/shamcey/default">Default</a></li>
+                    <li><a href="http://demo.themepixels.com/webpage/shamcey/navyblue">Navy Blue</a></li>
+                    <li><a href="http://demo.themepixels.com/webpage/shamcey/palegreen">Pale Green</a></li>
+                    <li><a href="http://demo.themepixels.com/webpage/shamcey/red">Red</a></li>
+                    <li><a href="http://demo.themepixels.com/webpage/shamcey/green">Green</a></li>
+                    <li><a href="http://demo.themepixels.com/webpage/shamcey/brown">Brown</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <div class="pageheader">
+            <form action="results.html" method="post" class="searchbar">
+                <input name="keyword" placeholder="To search type and hit enter..." type="text">
+            </form>
+            <div class="pageicon"><span class="iconfa-table"></span></div>
+            <div class="pagetitle">
+                <h5>Tables</h5>
+                <h1>Table Dynamic</h1>
+            </div>
+        </div><!--pageheader-->
+        
+        <div class="maincontent">
+            <div class="maincontentinner">
+            
+                <h4 class="widgettitle">Data Table</h4>
+                <div id="dyntable_wrapper" class="dataTables_wrapper" role="grid"><div class="dataTables_length" id="dyntable_length"><label>Show <select aria-controls="dyntable" size="1" name="dyntable_length"><option selected="selected" value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select> entries</label></div><div id="dyntable_filter" class="dataTables_filter"><label>Search: <input aria-controls="dyntable" type="text"></label></div><table aria-describedby="dyntable_info" id="dyntable" class="table table-bordered responsive dataTable">
+                    <colgroup>
+                        <col class="con0" style="align: center; width: 4%">
+                        <col class="con1">
+                        <col class="con0">
+                        <col class="con1">
+                        <col class="con0">
+                        <col class="con1">
+                    </colgroup>
+                    <thead>
+                        <tr role="row"><th aria-label=": activate to sort column ascending" aria-sort="ascending" style="width: 25px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 nosort sorting_asc"><div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" class="checkall" type="checkbox"></span></div></th><th aria-label="Rendering engine: activate to sort column ascending" style="width: 188px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">Rendering engine</th><th aria-label="Browser: activate to sort column ascending" style="width: 239px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head1 sorting">Browser</th><th aria-label="Platform(s): activate to sort column ascending" style="width: 223px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">Platform(s)</th><th aria-label="Engine version: activate to sort column ascending" style="width: 162px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head1 sorting">Engine version</th><th aria-label="CSS grade: activate to sort column ascending" style="width: 109px;" colspan="1" rowspan="1" aria-controls="dyntable" tabindex="0" role="columnheader" class="head0 sorting">CSS grade</th></tr>
+                    </thead>
+                    
+                <tbody aria-relevant="all" aria-live="polite" role="alert"><tr class="gradeX odd">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 4.0</td>
+                            <td class=" ">Win 95+</td>
+                            <td class="center ">4</td>
+                            <td class="center ">X</td>
+                        </tr><tr class="gradeC even">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 5.0</td>
+                            <td class=" ">Win 95+</td>
+                            <td class="center ">5</td>
+                            <td class="center ">C</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 5.5</td>
+                            <td class=" ">Win 95+</td>
+                            <td class="center ">5.5</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 6</td>
+                            <td class=" ">Win 98+</td>
+                            <td class="center ">6</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 7</td>
+                            <td class=" ">Win XP SP2+</td>
+                            <td class="center ">7</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">AOL browser (AOL desktop)</td>
+                            <td class=" ">Win XP</td>
+                            <td class="center ">6</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 1.0</td>
+                            <td class=" ">Win 98+ / OSX.2+</td>
+                            <td class="center ">1.7</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="aligncenter  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 1.5</td>
+                            <td class=" ">Win 98+ / OSX.2+</td>
+                            <td class="center ">1.8</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 2.0</td>
+                            <td class=" ">Win 98+ / OSX.2+</td>
+                            <td class="center ">1.8</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="  sorting_2"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 3.0</td>
+                            <td class=" ">Win 2k+ / OSX.3+</td>
+                            <td class="center ">1.9</td>
+                            <td class="center ">A</td>
+                        </tr></tbody></table><div id="dyntable_info" class="dataTables_info">Showing 1 to 10 of 51 entries</div><div id="dyntable_paginate" class="dataTables_paginate paging_full_numbers"><a id="dyntable_first" tabindex="0" class="first paginate_button paginate_button_disabled">First</a><a id="dyntable_previous" tabindex="0" class="previous paginate_button paginate_button_disabled">Previous</a><span><a tabindex="0" class="paginate_active">1</a><a tabindex="0" class="paginate_button">2</a><a tabindex="0" class="paginate_button">3</a><a tabindex="0" class="paginate_button">4</a><a tabindex="0" class="paginate_button">5</a></span><a id="dyntable_next" tabindex="0" class="next paginate_button">Next</a><a id="dyntable_last" tabindex="0" class="last paginate_button">Last</a></div></div>
+                
+                <br><br>
+                
+                <h4 class="widgettitle">Scroll Y Infinite</h4>
+                <div id="dyntable2_wrapper" class="dataTables_wrapper" role="grid"><div id="dyntable2_filter" class="dataTables_filter"><label>Search: <input aria-controls="dyntable2" type="text"></label></div><div class="dataTables_scroll"><div style="overflow: hidden; position: relative; border: 0px none; width: 100%;" class="dataTables_scrollHead"><div style="width: 1032px; padding-right: 17px;" class="dataTables_scrollHeadInner"><table style="margin-left: 0px; width: 1032px;" class="table table-bordered table-infinite dataTable"><thead>
+                        <tr role="row"><th aria-label=": activate to sort column descending" aria-sort="ascending" style="width: 24px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 nosort sorting_asc"><div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" class="checkall" type="checkbox"></span></div></th><th aria-label="Rendering engine: activate to sort column ascending" style="width: 186px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 sorting">Rendering engine</th><th aria-label="Browser: activate to sort column ascending" style="width: 235px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head1 sorting">Browser</th><th aria-label="Platform(s): activate to sort column ascending" style="width: 220px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 sorting">Platform(s)</th><th aria-label="Engine version: activate to sort column ascending" style="width: 160px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head1 sorting">Engine version</th><th aria-label="CSS grade: activate to sort column ascending" style="width: 106px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 sorting">CSS grade</th></tr>
+                    </thead></table></div></div><div style="overflow: auto; height: 300px; width: 100%;" class="dataTables_scrollBody"><table aria-describedby="dyntable2_info" style="margin-left: 0px; width: 100%;" class="table table-bordered table-infinite dataTable" id="dyntable2"><thead>
+                        <tr style="height: 0px;" role="row"><th aria-label=": activate to sort column descending" aria-sort="ascending" style="width: 24px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 nosort sorting_asc"></th><th aria-label="Rendering engine: activate to sort column ascending" style="width: 186px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 sorting"></th><th aria-label="Browser: activate to sort column ascending" style="width: 235px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head1 sorting"></th><th aria-label="Platform(s): activate to sort column ascending" style="width: 220px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 sorting"></th><th aria-label="Engine version: activate to sort column ascending" style="width: 160px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head1 sorting"></th><th aria-label="CSS grade: activate to sort column ascending" style="width: 106px; padding-top: 0px; padding-bottom: 0px; border-top-width: 0px; border-bottom-width: 0px; height: 0px;" colspan="1" rowspan="1" aria-controls="dyntable2" tabindex="0" role="columnheader" class="head0 sorting"></th></tr>
+                    </thead>
+                    <colgroup>
+                        <col class="con0" style="align: center; width: 4%">
+                        <col class="con1">
+                        <col class="con0">
+                        <col class="con1">
+                        <col class="con0">
+                        <col class="con1">
+                    </colgroup>
+                    
+                    
+                <tbody aria-relevant="all" aria-live="polite" role="alert"><tr class="gradeX odd">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 4.0</td>
+                            <td class=" ">Win 95+</td>
+                            <td class="center ">4</td>
+                            <td class="center ">X</td>
+                        </tr><tr class="gradeC even">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 5.0</td>
+                            <td class=" ">Win 95+</td>
+                            <td class="center ">5</td>
+                            <td class="center ">C</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 5.5</td>
+                            <td class=" ">Win 95+</td>
+                            <td class="center ">5.5</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 6</td>
+                            <td class=" ">Win 98+</td>
+                            <td class="center ">6</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">Internet Explorer 7</td>
+                            <td class=" ">Win XP SP2+</td>
+                            <td class="center ">7</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Trident</td>
+                            <td class=" ">AOL browser (AOL desktop)</td>
+                            <td class=" ">Win XP</td>
+                            <td class="center ">6</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 1.0</td>
+                            <td class=" ">Win 98+ / OSX.2+</td>
+                            <td class="center ">1.7</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="aligncenter  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 1.5</td>
+                            <td class=" ">Win 98+ / OSX.2+</td>
+                            <td class="center ">1.8</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA odd">
+                          <td class="  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 2.0</td>
+                            <td class=" ">Win 98+ / OSX.2+</td>
+                            <td class="center ">1.8</td>
+                            <td class="center ">A</td>
+                        </tr><tr class="gradeA even">
+                          <td class="  sorting_1"><span class="center">
+                            <div id="uniform-undefined" class="checker"><span><input style="opacity: 0;" type="checkbox"></span></div>
+                          </span></td>
+                            <td class=" ">Gecko</td>
+                            <td class=" ">Firefox 3.0</td>
+                            <td class=" ">Win 2k+ / OSX.3+</td>
+                            <td class="center ">1.9</td>
+                            <td class="center ">A</td>
+                        </tr></tbody></table></div></div><div id="dyntable2_info" class="dataTables_info">Showing 1 to 10 of 51 entries</div></div>
+                
+                <div class="footer">
+                    <div class="footer-left">
+                        <span>© 2013. Shamcey Admin Template. All Rights Reserved.</span>
+                    </div>
+                    <div class="footer-right">
+                        <span>Designed by: <a href="http://themepixels.com/">ThemePixels</a></span>
+                    </div>
+                </div><!--footer-->
+            
+            </div><!--maincontentinner-->
+        </div><!--maincontent-->
+        
+    </div><!--rightpanel-->
+    
+</div><!--mainwrapper-->
+
+
+</body></html>

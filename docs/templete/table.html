@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://geedmo.com/themes/naut/v1.2/angularjs/#/app/tables/xeditable -->
+<html lang="en" ng-app="naut" class="js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths win ng-scope"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+   <meta name="description" content="Bootstrap + AngularJS">
+   <meta name="keywords" content="app, responsive, angular, bootstrap, dashboard, admin">
+   <title data-ng-bind="pageTitle()" class="ng-binding">Naut - Bootstrap + AngularJS</title>
+   <!--<script src="./js/jquery-1.8.2.min.js" type="text/javascript"></script>
+   <script src="./js/redir.js" type="text/javascript"></script>
+   <script src="./js/jquery.slimscroll.min.js" async=""></script>
+   <script src="./js/toaster.js" async=""></script>-->
+   <link rel="stylesheet" href="http://geedmo.com/themes/naut/v1.2/angularjs/app/css/application-f35d0077.css">
+   <link type="text/css" rel="stylesheet" href="./css/font-awesome.min.css"><link type="text/css" rel="stylesheet" href="./css/weather-icons.min.css"><link type="text/css" rel="stylesheet" href="./css/feather.css"><link type="text/css" rel="stylesheet" href="./css/xeditable.css"><script src="./js/xeditable.js" async=""></script><script src="./js/screenfull.js" async=""></script><script src="./js/jquery.sparkline.min.js" async=""></script>
+   <link type="text/css" rel="stylesheet" href="./css/toaster.css">
+   <link type="text/css" rel="stylesheet" href="./css/animate.min.css">
+   <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style>
+</head>
+
+<body ng-clok="" ng-class="{ &#39;layout-fixed&#39; : app.layout.isFixed, &#39;layout-boxed&#39; : app.layout.isBoxed, &#39;layout-dock&#39; : app.layout.isDocked, &#39;layout-material&#39;: app.layout.isMaterial, &#39;aside-offscreen&#39; : app.sidebar.isOffscreen, &#39;aside-mini&#39; : app.sidebar.isMini, &#39;footer-hidden&#39;: app.footer.hidden, &#39;in-app&#39;: !$state.includes(&#39;page&#39;)}" class="in-app">
+   <!-- uiView:  --><div data-ui-view="" data-autoscroll="false" ng-controller="CoreController" class="app-container ng-scope"><!-- top navbar-->
+<!-- ngInclude: 'templates/top-navbar.html' --><header ng-include="&#39;templates/top-navbar.html&#39;" ng-class="app.theme.topbar" class="ng-scope bg-primary"><!-- START Top Navbar-->
+<nav role="navigation" ng-controller="HeaderNavController as header" class="navbar topnavbar ng-scope">
+   <!-- START button offset-->
+   <div class="btn-offset">
+      <button type="button" btn-layer-morph="" target="#layer-search" ripple="" class="btn btn-info btn-circle btn-lg shadow-z1">
+         <em class="fa fa-search"></em>
+      <span class="ripple"></span></button>
+   </div>
+   <!-- START button offset-->
+   <!-- START navbar header-->
+   <div class="navbar-header">
+      <a ui-sref="app.dashboard" class="navbar-brand" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/dashboard">
+         <img src="./images/logo.png" alt="App Logo" class="brand-logo">
+      </a>
+      <!-- Mobile buttons-->
+      <div class="mobile-toggles">
+         <!-- Button to show/hide the sidebar on mobile. Visible on mobile only.-->
+         <a href="" ng-click="app.sidebar.isOffscreen = !app.sidebar.isOffscreen" class="sidebar-toggle">
+            <em class="fa fa-navicon"></em>
+         </a>
+         <!-- Button to show/hide the header menu on mobile. Visible on mobile only.-->
+         <a href="" ng-click="header.toggleHeaderMenu()" class="menu-toggle hidden-material">
+            <em class="fa fa-ellipsis-v fa-fw"></em>
+         </a>
+      </div>
+   </div>
+   <!-- END navbar header-->
+   <!-- START Nav wrapper-->
+   <div collapse="header.headerMenuCollapsed" class="nav-wrapper collapse navbar-collapse" style="height: 0px;">
+      <!-- START Left navbar-->
+      <ul class="nav navbar-nav hidden-material">
+         <li>
+            <!-- Button used to collapse the left sidebar. Only visible on tablet and desktops-->
+            <a href="" ng-click="app.sidebar.isOffscreen = !app.sidebar.isOffscreen" class="hidden-xs">
+               <em ng-class="app.sidebar.isOffscreen ? &#39;fa-caret-right&#39;:&#39;fa-caret-left&#39;" class="fa fa-caret-left"></em>
+            </a>
+         </li>
+         <!-- START Apps menu-->
+         <li dropdown="" class="dropdown">
+            <a href="" dropdown-toggle="" ripple="" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+               <em class="fa fa-th fa-fw"></em>
+               <span class="visible-xs-inline ml">Applications</span>
+            <span class="ripple"></span></a>
+            <!-- START Dropdown menu-->
+            <ul id="bg-white" class="dropdown-menu p wd-lg">
+               <div class="row ml0 mr0 mt mb text-center">
+                  <div class="col-xs-4">
+                     <div class="pv">
+                        <a ui-sref="app.extras.profile" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/profile">
+                           <span class="block mb">
+                              <em class="icon-head fa-2x text-warning"></em>
+                           </span>
+                           <small class="text-muted">Profile</small>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4">
+                     <div class="pv">
+                        <a ui-sref="app-fh.mailbox.folder.list({folder: &#39;inbox&#39;})" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/fh/mailbox/folder/inbox">
+                           <span class="block mb">
+                              <em class="icon-mail fa-2x text-primary"></em>
+                           </span>
+                           <small class="text-muted">Mailbox</small>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4">
+                     <div class="pv">
+                        <a ui-sref="app.extras.calendar" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/calendar">
+                           <span class="block mb">
+                              <em class="fa fa-calendar fa-2x text-danger"></em>
+                           </span>
+                           <small class="text-muted">Calendar</small>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4">
+                     <div class="pv">
+                        <a ui-sref="app.maps.vector" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/maps/vector">
+                           <span class="block mb">
+                              <em class="icon-map fa-2x text-success"></em>
+                           </span>
+                           <small class="text-muted">Map</small>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4">
+                     <div class="pv">
+                        <a ui-sref="app.dashboard" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/dashboard">
+                           <span class="block mb">
+                              <em class="icon-bar-graph-2 fa-2x text-info"></em>
+                           </span>
+                           <small class="text-muted">Dashboard</small>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="col-xs-4">
+                     <div class="pv">
+                        <a ui-sref="app.extras.gallery" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/gallery">
+                           <span class="block mb">
+                              <em class="icon-image fa-2x text-muted"></em>
+                           </span>
+                           <small class="text-muted">Gallery</small>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+            </ul>
+         </li>
+         <!-- END Apps menu-->
+         <!-- START lock screen-->
+         <li>
+            <a ui-sref="page.lock" title="Lock screen" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/page/lock">
+               <em class="icon-lock fa-fw"></em>
+               <span class="visible-xs-inline ml">Lock Screen</span>
+            <span class="ripple"></span></a>
+         </li>
+         <!-- END lock screen-->
+      </ul>
+      <!-- END Left navbar-->
+   </div>
+   <!-- END Nav wrapper-->
+
+</nav>
+<!-- END Top Navbar--></header>
+<!-- Sidebar-->
+<!-- ngInclude: 'templates/sidebar.html' --><aside ng-include="&#39;templates/sidebar.html&#39;" ng-class="app.theme.sidebar" class="ng-scope bg-white"><!-- START Sidebar-->
+<div class="sidebar-wrapper ng-scope">
+   <div ui-sidebar="" class="sidebar">
+      <div class="sidebar-nav">
+         <ul class="nav">
+            <!-- Iterates over all sidebar items-->
+            <li class="nav-heading">
+               <span translate="sidebar.heading.HEADER" class="text-muted ng-scope">Main Navigation</span>
+            </li>
+            <li ui-sref-active="active">
+               <a ui-sref="app.dashboard" title="Dashboard" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/dashboard">
+                  <div class="label pull-right label-success">4</div>
+                  <em class="sidebar-item-icon icon-pie-graph"></em>
+                  <span translate="sidebar.nav.DASHBOARD" class="ng-scope">Dashboard</span>
+               <span class="ripple"></span></a>
+            </li>
+            <li ui-sref-active="active">
+               <a ui-sref="app.cards" title="Cards" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/cards">
+                  <em class="sidebar-item-icon icon-stack"></em>
+                  <span translate="sidebar.nav.CARDS" class="ng-scope">Cards</span>
+               <span class="ripple"></span></a>
+            </li>
+            <li ui-sref-active="active">
+               <a ui-sref="app-fh.mailbox.folder.list({folder: &#39;inbox&#39;})" title="Mailbox" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/fh/mailbox/folder/inbox">
+                  <div class="label pull-right label-success">12</div>
+                  <em class="sidebar-item-icon icon-mail"></em>
+                  <span translate="sidebar.nav.app.MAILBOX" class="ng-scope">Mailbox</span>
+               <span class="ripple"></span></a>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app-fh.columns&#39;)}">
+               <a href="" title="Layouts" ripple="">
+                  <em class="sidebar-item-icon icon-layout"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span>Layouts</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Layouts</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app-dock.dashboard" title="Docked" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/dock/dashboard">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Docked</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app-fh.columns" title="Full Height" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/fh/columns">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Full Height</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li>
+               <hr>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.ui&#39;)}">
+               <a href="" title="Components" ripple="">
+                  <em class="sidebar-item-icon icon-box"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.component.COMPONENTS" class="ng-scope">Components</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Components</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.buttons" title="Buttons" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/buttons">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.BUTTON" class="ng-scope">Buttons</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.notifications" title="Notifications" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/notifications">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.NOTIFICATION" class="ng-scope">Notifications</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.bootstrapui" title="Bootsrap UI" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/bootstrapui">
+                        <em class="sidebar-item-icon"></em>
+                        <div class="label pull-right label-primary">7</div>
+                        <span translate="sidebar.nav.component.BOOTSTRAPUI" class="ng-scope">Bootstrap UI</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.panels" title="Panels" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/panels">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.PANEL" class="ng-scope">Panels</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li>
+                     <hr>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.sweetalert" title="SweetAlert" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/sweetalert">
+                        <em class="sidebar-item-icon"></em>
+                        <span>SweetAlert</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.navtree" title="Nav Tree" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/navtree">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Nav Tree</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.nestable" title="Nestable" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/nestable">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Nestable</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.sortable" title="Sortable" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/sortable">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Sortable</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.grid" title="Grid" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/grid">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.GRID" class="ng-scope">Grid</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.grid-masonry" title="Grid Masonry" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/grid-masonry">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.GRID_MASONRY" class="ng-scope">Grid Masonry</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.typo" title="Typography" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/typo">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.TYPO" class="ng-scope">Typography</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.palette" title="Palette" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/palette">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.component.PALETTE" class="ng-scope">Palette</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.ui.localization" title="Localization" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/ui/localization">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Localization</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.forms&#39;)}">
+               <a href="" title="Forms" ripple="">
+                  <em class="sidebar-item-icon icon-book"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.form.FORM" class="ng-scope">Forms</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Forms</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.inputs" title="Inputs" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/inputs">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.form.INPUT" class="ng-scope">Inputs</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.validation" title="Validation" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/validation">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.form.VALIDATION" class="ng-scope">Validation</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.wizard" title="Wizard" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/wizard">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.form.WIZARD" class="ng-scope">Wizard</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.upload" title="Upload" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/upload">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Upload</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.xeditable" title="xEditable" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/xeditable">
+                        <em class="sidebar-item-icon"></em>
+                        <span>xEditable</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.imagecrop" title="Image Crop" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/imagecrop">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Image Crop</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.uiselect" title="uiSelect" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/uiselect">
+                        <em class="sidebar-item-icon"></em>
+                        <span>uiSelect</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.forms.slider" title="slider" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/forms/slider">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Range slider</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.tables&#39;)}" class="active">
+               <a href="" title="Tables" ripple="">
+                  <em class="sidebar-item-icon icon-grid"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.table.TABLE" class="ng-scope">Tables</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Tables</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.tables.responsive" title="Responsive" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/tables/responsive">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.table.RESPONSIVE" class="ng-scope">Responsive</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.tables.ngtable" title="ngTables" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/tables/ngtable">
+                        <em class="sidebar-item-icon"></em>
+                        <span>ngTables</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active" class="active">
+                     <a ui-sref="app.tables.xeditable" title="xEditable" ripple="" href="#">
+                        <em class="sidebar-item-icon"></em>
+                        <span>xEditable</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.tables.datatables" title="Datables" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/tables/datatables">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Datables</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.charts&#39;)}">
+               <a href="" title="Flot" ripple="">
+                  <em class="sidebar-item-icon icon-bar-graph"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.CHART" class="ng-scope">Charts</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Charts</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.charts.flot" title="Flot" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/charts/flot">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Flot</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.charts.pie" title="Pie Charts" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/charts/pie">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Pie</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.maps&#39;)}">
+               <a href="" title="Maps" ripple="">
+                  <em class="sidebar-item-icon icon-map"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.map.MAP" class="ng-scope">Maps</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Maps</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.maps.google" title="Google Maps" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/maps/google">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.map.GOOGLE" class="ng-scope">Google Map</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.maps.vector" title="Vector Maps" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/maps/vector">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.map.VECTOR" class="ng-scope">Vector Map</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.icons&#39;)}">
+               <a href="" title="Icons" ripple="">
+                  <em class="sidebar-item-icon icon-play"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.icon.ICON" class="ng-scope">Icons</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Icons</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.icons.feather" title="Feather Icons" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/icons/feather">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.icon.FEATHER" class="ng-scope">Feather Icons</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.icons.fa" title="Font Awesome" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/icons/fa">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.icon.FA" class="ng-scope">Font Awesome</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.icons.climacon" title="Climacons" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/icons/climacon">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.icon.CLIMA" class="ng-scope">Climacons</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.icons.weather" title="Weather Icons" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/icons/weather">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.icon.WEATHER" class="ng-scope">Weather Icons</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li>
+               <hr>
+            </li>
+            <li class="nav-heading">
+               <span class="text-muted">Extras</span>
+            </li>
+            <li ng-class="{active:$state.includes(&#39;app.extras&#39;)}">
+               <a href="" title="Extras" ripple="">
+                  <em class="sidebar-item-icon icon-ribbon"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span>Extras</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Extras</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.calendar" title="Calendar" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/calendar">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.app.CALENDAR" class="ng-scope">Calendar</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.tasks" title="Tasks List" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/tasks">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.app.TASK" class="ng-scope">Tasks</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app-fh.chat" title="Chat" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/fh/chat">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Chat</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li>
+                     <hr>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.invoice" title="Invoice" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/invoice">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.INVOICE" class="ng-scope">Invoice</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.price" title="Price" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/price">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.PRICE" class="ng-scope">Price Table</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.search" title="Search" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/search">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.SEARCH" class="ng-scope">Search</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.timeline" title="Timeline" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/timeline">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Timeline</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.projects" title="Projects" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/projects">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Projects</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.gallery" title="Gallery" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/gallery">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Gallery</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.profile" title="Profile" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/profile">
+                        <em class="sidebar-item-icon"></em>
+                        <span>Profile</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="app.extras.template" title="Template" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/template">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.BLANK" class="ng-scope">Blank Template</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li>
+               <a href="" title="Pages" ripple="">
+                  <em class="sidebar-item-icon icon-stack"></em>
+                  <em class="sidebar-item-caret fa pull-right fa-angle-right"></em>
+                  <span translate="sidebar.nav.pages.PAGES" class="ng-scope">Pages</span>
+               <span class="ripple"></span></a>
+               <ul class="nav sidebar-subnav">
+                  <li class="sidebar-subnav-header">
+                     <a>
+                        <em class="sidebar-item-icon fa fa-angle-right"></em>Pages</a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="page.login" title="Login" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/page/login">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.LOGIN" class="ng-scope">Login</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="page.register" title="Sign up" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/page/register">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.REGISTER" class="ng-scope">Register</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="page.recover" title="Recover Password" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/page/recover">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.RECOVER" class="ng-scope">Recover password</span>
+                     <span class="ripple"></span></a>
+                  </li>
+                  <li ui-sref-active="active">
+                     <a ui-sref="page.lock" title="Lock" ripple="" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/page/lock">
+                        <em class="sidebar-item-icon"></em>
+                        <span translate="sidebar.nav.pages.LOCK" class="ng-scope">Lock</span>
+                     <span class="ripple"></span></a>
+                  </li>
+               </ul>
+            </li>
+            <li>
+               <a href="http://geedmo.com/themes/naut/v1.2/html5jquery/dist" title="Static" ripple="" class="bg-primary">
+                  <em class="text-white sidebar-item-icon fa fa-html5"></em>
+                  <span class="text-white">Static Version</span>
+               <span class="ripple"></span></a>
+            </li>
+         </ul>
+      </div>
+   </div>
+</div>
+<!-- END Sidebar--></aside>
+<!-- Main-->
+<section class="ng-scope">
+   <!-- Content-->
+   <!-- uiView:  --><div ui-view="" autoscroll="false" ng-class="app.views.animation" class="app ng-scope ng-fadeInLeft2"><!-- uiView:  --><div ui-view="" ng-class="app.views.animation" class="ng-scope ng-fadeInLeft2"><div class="app-view-header ng-scope">Table xEditable
+   <small>Edit in place for AngularJS</small>
+</div>
+<div ng-controller="TablexEditableController as xtable" class="container-fluid ng-scope">
+   <!-- Editable row-->
+   <h4 class="page-header">Editable row</h4>
+   <table class="table table-bordered table-hover bg-white">
+      <tbody><tr style="font-weight: bold">
+         <td style="width:35%">Name</td>
+         <td style="width:20%">Status</td>
+         <td style="width:20%">Group</td>
+         <td style="width:25%">Edit</td>
+      </tr>
+      <!-- ngRepeat: user in xtable.users --><tr ng-repeat="user in xtable.users" class="ng-scope">
+         <td>
+            <!-- editable username (text with validation)-->
+            <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="xtable.checkName($data, user.id)" e-required="" class="ng-scope ng-binding editable">awesome user1</span>
+         </td>
+         <td>
+            <!-- editable status (select-local)-->
+            <span editable-select="user.status" e-name="status" e-form="rowform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable">status2</span>
+         </td>
+         <td>
+            <!-- editable group (select-remote)-->
+            <span editable-select="user.group" e-name="group" onshow="xtable.loadGroups()" e-form="rowform" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable">admin</span>
+         </td>
+         <td style="white-space: nowrap">
+            <!-- form-->
+            <form editable-form="" name="rowform" onbeforesave="xtable.saveUser($data, user.id)" ng-show="rowform.$visible" shown="xtable.inserted == user" class="form-buttons form-inline ng-pristine ng-valid ng-hide">
+               <button type="submit" ng-disabled="rowform.$waiting" title="Save" class="btn btn-sm btn-info">
+                  <em class="fa fa-save"></em>
+               </button>
+               <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" title="Cancel" class="btn btn-sm btn-default">
+                  <em class="fa fa-times"></em>
+               </button>
+            </form>
+            <div ng-show="!rowform.$visible" class="buttons">
+               <button ng-click="rowform.$show()" title="Edit" class="btn btn-sm btn-info">
+                  <em class="fa fa-pencil"></em>
+               </button>
+               <button ng-click="xtable.removeUser($index)" title="Delete" class="btn btn-sm btn-danger">
+                  <em class="fa fa-trash"></em>
+               </button>
+            </div>
+         </td>
+      </tr><!-- end ngRepeat: user in xtable.users --><tr ng-repeat="user in xtable.users" class="ng-scope">
+         <td>
+            <!-- editable username (text with validation)-->
+            <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="xtable.checkName($data, user.id)" e-required="" class="ng-scope ng-binding editable">awesome user2</span>
+         </td>
+         <td>
+            <!-- editable status (select-local)-->
+            <span editable-select="user.status" e-name="status" e-form="rowform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable editable-empty">Not set</span>
+         </td>
+         <td>
+            <!-- editable group (select-remote)-->
+            <span editable-select="user.group" e-name="group" onshow="xtable.loadGroups()" e-form="rowform" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable">vip</span>
+         </td>
+         <td style="white-space: nowrap">
+            <!-- form-->
+            <form editable-form="" name="rowform" onbeforesave="xtable.saveUser($data, user.id)" ng-show="rowform.$visible" shown="xtable.inserted == user" class="form-buttons form-inline ng-pristine ng-valid ng-hide">
+               <button type="submit" ng-disabled="rowform.$waiting" title="Save" class="btn btn-sm btn-info">
+                  <em class="fa fa-save"></em>
+               </button>
+               <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" title="Cancel" class="btn btn-sm btn-default">
+                  <em class="fa fa-times"></em>
+               </button>
+            </form>
+            <div ng-show="!rowform.$visible" class="buttons">
+               <button ng-click="rowform.$show()" title="Edit" class="btn btn-sm btn-info">
+                  <em class="fa fa-pencil"></em>
+               </button>
+               <button ng-click="xtable.removeUser($index)" title="Delete" class="btn btn-sm btn-danger">
+                  <em class="fa fa-trash"></em>
+               </button>
+            </div>
+         </td>
+      </tr><!-- end ngRepeat: user in xtable.users --><tr ng-repeat="user in xtable.users" class="ng-scope">
+         <td>
+            <!-- editable username (text with validation)-->
+            <span editable-text="user.name" e-name="name" e-form="rowform" onbeforesave="xtable.checkName($data, user.id)" e-required="" class="ng-scope ng-binding editable">awesome user3</span>
+         </td>
+         <td>
+            <!-- editable status (select-local)-->
+            <span editable-select="user.status" e-name="status" e-form="rowform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable">status2</span>
+         </td>
+         <td>
+            <!-- editable group (select-remote)-->
+            <span editable-select="user.group" e-name="group" onshow="xtable.loadGroups()" e-form="rowform" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable editable-empty">Not set</span>
+         </td>
+         <td style="white-space: nowrap">
+            <!-- form-->
+            <form editable-form="" name="rowform" onbeforesave="xtable.saveUser($data, user.id)" ng-show="rowform.$visible" shown="xtable.inserted == user" class="form-buttons form-inline ng-pristine ng-valid ng-hide">
+               <button type="submit" ng-disabled="rowform.$waiting" title="Save" class="btn btn-sm btn-info">
+                  <em class="fa fa-save"></em>
+               </button>
+               <button type="button" ng-disabled="rowform.$waiting" ng-click="rowform.$cancel()" title="Cancel" class="btn btn-sm btn-default">
+                  <em class="fa fa-times"></em>
+               </button>
+            </form>
+            <div ng-show="!rowform.$visible" class="buttons">
+               <button ng-click="rowform.$show()" title="Edit" class="btn btn-sm btn-info">
+                  <em class="fa fa-pencil"></em>
+               </button>
+               <button ng-click="xtable.removeUser($index)" title="Delete" class="btn btn-sm btn-danger">
+                  <em class="fa fa-trash"></em>
+               </button>
+            </div>
+         </td>
+      </tr><!-- end ngRepeat: user in xtable.users -->
+   </tbody></table>
+   <button ng-click="xtable.addUser()" class="btn btn-default">Add row</button>
+   <!-- Editable column-->
+   <h4 class="page-header">Editable column</h4>
+   <table class="table table-bordered table-hover bg-white">
+      <tbody><tr style="font-weight: bold; white-space: nowrap">
+         <!-- username header-->
+         <td style="width:40%">Name
+            <form editable-form="" name="nameform" onaftersave="xtable.saveColumn(&#39;name&#39;)" ng-show="nameform.$visible" class="ng-pristine ng-valid ng-hide">
+               <button type="submit" ng-disabled="nameform.$waiting" class="btn btn-info">save</button>
+               <button type="button" ng-disabled="nameform.$waiting" ng-click="nameform.$cancel()" class="btn btn-default">cancel</button>
+            </form>
+            <button ng-show="!nameform.$visible" ng-click="nameform.$show()" class="btn btn-link btn-default">
+               <em class="fa fa-pencil text-muted"></em>
+            </button>
+         </td>
+         <!-- status header-->
+         <td style="width:30%">Status
+            <form editable-form="" name="statusform" onaftersave="xtable.saveColumn(&#39;status&#39;)" ng-show="statusform.$visible" class="ng-pristine ng-valid ng-hide">
+               <button type="submit" ng-disabled="statusform.$waiting" class="btn btn-info">save</button>
+               <button type="button" ng-disabled="statusform.$waiting" ng-click="statusform.$cancel()" class="btn btn-default">cancel</button>
+            </form>
+            <button ng-show="!statusform.$visible" ng-click="statusform.$show()" class="btn btn-link btn-default">
+               <em class="fa fa-pencil text-muted"></em>
+            </button>
+         </td>
+         <!-- group header-->
+         <td style="width:30%">Group
+            <form editable-form="" name="groupform" onaftersave="xtable.saveColumn(&#39;group&#39;)" ng-show="groupform.$visible" class="ng-pristine ng-valid ng-hide">
+               <button type="submit" ng-disabled="groupform.$waiting" class="btn btn-info">save</button>
+               <button type="button" ng-disabled="groupform.$waiting" ng-click="groupform.$cancel()" class="btn btn-default">cancel</button>
+            </form>
+            <button ng-show="!groupform.$visible" ng-click="groupform.$show()" class="btn btn-link btn-default">
+               <em class="fa fa-pencil text-muted"></em>
+            </button>
+         </td>
+      </tr>
+      <!-- ngRepeat: user in xtable.users --><tr ng-repeat="user in xtable.users" class="ng-scope">
+         <td>
+            <!-- editable username (text with validation)-->
+            <span editable-text="user.name" e-name="name" e-form="nameform" onbeforesave="xtable.checkName($data)" class="ng-scope ng-binding editable">awesome user1</span>
+         </td>
+         <td>
+            <!-- editable status (select-local)-->
+            <span editable-select="user.status" e-name="status" e-form="statusform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable">status2</span>
+         </td>
+         <td>
+            <!-- editable group (select-remote)-->
+            <span editable-select="user.group" e-name="group" onshow="xtable.loadGroups()" e-form="groupform" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable">admin</span>
+         </td>
+      </tr><!-- end ngRepeat: user in xtable.users --><tr ng-repeat="user in xtable.users" class="ng-scope">
+         <td>
+            <!-- editable username (text with validation)-->
+            <span editable-text="user.name" e-name="name" e-form="nameform" onbeforesave="xtable.checkName($data)" class="ng-scope ng-binding editable">awesome user2</span>
+         </td>
+         <td>
+            <!-- editable status (select-local)-->
+            <span editable-select="user.status" e-name="status" e-form="statusform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable editable-empty">Not set</span>
+         </td>
+         <td>
+            <!-- editable group (select-remote)-->
+            <span editable-select="user.group" e-name="group" onshow="xtable.loadGroups()" e-form="groupform" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable">vip</span>
+         </td>
+      </tr><!-- end ngRepeat: user in xtable.users --><tr ng-repeat="user in xtable.users" class="ng-scope">
+         <td>
+            <!-- editable username (text with validation)-->
+            <span editable-text="user.name" e-name="name" e-form="nameform" onbeforesave="xtable.checkName($data)" class="ng-scope ng-binding editable">awesome user3</span>
+         </td>
+         <td>
+            <!-- editable status (select-local)-->
+            <span editable-select="user.status" e-name="status" e-form="statusform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable">status2</span>
+         </td>
+         <td>
+            <!-- editable group (select-remote)-->
+            <span editable-select="user.group" e-name="group" onshow="xtable.loadGroups()" e-form="groupform" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable editable-empty">Not set</span>
+         </td>
+      </tr><!-- end ngRepeat: user in xtable.users -->
+   </tbody></table>
+   <!-- Editable table-->
+   <h4 class="page-header">Editable table</h4>
+   <form editable-form="" name="tableform" onaftersave="xtable.saveTable()" oncancel="xtable.cancel()" class="ng-pristine ng-valid">
+      <!-- table-->
+      <table class="table table-bordered table-hover bg-white">
+         <tbody><tr style="font-weight: bold">
+            <td style="width:40%">Name</td>
+            <td style="width:30%">Status</td>
+            <td style="width:30%">Group</td>
+            <td style="width:30%">
+               <span ng-show="tableform.$visible" class="ng-hide">Action</span>
+            </td>
+         </tr>
+         <!-- ngRepeat: user in xtable.users | filter:filterUser --><tr ng-repeat="user in xtable.users | filter:filterUser" class="ng-scope">
+            <td>
+               <!-- editable username (text with validation)-->
+               <span editable-text="user.name" e-form="tableform" onbeforesave="xtable.checkName($data, user.id)" class="ng-scope ng-binding editable">awesome user1</span>
+            </td>
+            <td>
+               <!-- editable status (select-local)-->
+               <span editable-select="user.status" e-form="tableform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable">status2</span>
+            </td>
+            <td>
+               <!-- editable group (select-remote)-->
+               <span editable-select="user.group" e-form="tableform" onshow="xtable.loadGroups()" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable">admin</span>
+            </td>
+            <td>
+               <button type="button" ng-show="tableform.$visible" ng-click="deleteUser(user.id)" class="btn btn-danger pull-right ng-hide">
+                  <em class="fa fa-trash"></em>
+               </button>
+            </td>
+         </tr><!-- end ngRepeat: user in xtable.users | filter:filterUser --><tr ng-repeat="user in xtable.users | filter:filterUser" class="ng-scope">
+            <td>
+               <!-- editable username (text with validation)-->
+               <span editable-text="user.name" e-form="tableform" onbeforesave="xtable.checkName($data, user.id)" class="ng-scope ng-binding editable">awesome user2</span>
+            </td>
+            <td>
+               <!-- editable status (select-local)-->
+               <span editable-select="user.status" e-form="tableform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable editable-empty">Not set</span>
+            </td>
+            <td>
+               <!-- editable group (select-remote)-->
+               <span editable-select="user.group" e-form="tableform" onshow="xtable.loadGroups()" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable">vip</span>
+            </td>
+            <td>
+               <button type="button" ng-show="tableform.$visible" ng-click="deleteUser(user.id)" class="btn btn-danger pull-right ng-hide">
+                  <em class="fa fa-trash"></em>
+               </button>
+            </td>
+         </tr><!-- end ngRepeat: user in xtable.users | filter:filterUser --><tr ng-repeat="user in xtable.users | filter:filterUser" class="ng-scope">
+            <td>
+               <!-- editable username (text with validation)-->
+               <span editable-text="user.name" e-form="tableform" onbeforesave="xtable.checkName($data, user.id)" class="ng-scope ng-binding editable">awesome user3</span>
+            </td>
+            <td>
+               <!-- editable status (select-local)-->
+               <span editable-select="user.status" e-form="tableform" e-ng-options="s.value as s.text for s in xtable.statuses" class="ng-scope ng-binding editable">status2</span>
+            </td>
+            <td>
+               <!-- editable group (select-remote)-->
+               <span editable-select="user.group" e-form="tableform" onshow="xtable.loadGroups()" e-ng-options="g.id as g.text for g in xtable.groups" class="ng-scope ng-binding editable editable-empty">Not set</span>
+            </td>
+            <td>
+               <button type="button" ng-show="tableform.$visible" ng-click="deleteUser(user.id)" class="btn btn-danger pull-right ng-hide">
+                  <em class="fa fa-trash"></em>
+               </button>
+            </td>
+         </tr><!-- end ngRepeat: user in xtable.users | filter:filterUser -->
+      </tbody></table>
+      <!-- buttons-->
+      <div class="btn-edit">
+         <button type="button" ng-show="!tableform.$visible" ng-click="tableform.$show()" class="btn btn-default">edit</button>
+      </div>
+      <div ng-show="tableform.$visible" class="btn-form ng-hide">
+         <button type="button" ng-disabled="tableform.$waiting" ng-click="addUser()" class="btn btn-default pull-right">add row</button>
+         <button type="submit" ng-disabled="tableform.$waiting" class="btn btn-info">save</button>
+         <button type="button" ng-disabled="tableform.$waiting" ng-click="tableform.$cancel()" class="btn btn-default">cancel</button>
+      </div>
+   </form>
+</div></div></div>
+</section>
+<!-- Page footer-->
+<!-- ngInclude: 'templates/footer.html' --><footer ng-include="&#39;templates/footer.html&#39;" class="ng-scope"><span class="ng-binding ng-scope">© 2015 - Naut</span></footer></div>
+   <!-- Settings-->
+   <!-- ngInclude: 'templates/settings.html' --><div ng-include="&#39;templates/settings.html&#39;" ng-class="{&#39;visible&#39;: showSettings}" ng-init="showSettings = false" class="settings-wrapper ng-scope"><div class="settings-inner ng-scope">
+   <div ng-click="showSettings = !showSettings" class="settings-button">
+      <em class="icon-cog"></em>
+   </div>
+   <div ng-controller="SettingsController as config" class="settings ng-scope">
+      <div class="settings-inner">
+         <div class="settings-content">
+            <div class="pt ph">
+               <p class="text-muted">THEMES</p>
+               <div class="clearfix mb">
+                  <!-- ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="0">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-primary"></li>
+                              <li ng-class="theme.topbar" class="bg-primary"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="1">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-purple"></li>
+                              <li ng-class="theme.topbar" class="bg-purple"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="2">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-success"></li>
+                              <li ng-class="theme.topbar" class="bg-success"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="3">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-warning"></li>
+                              <li ng-class="theme.topbar" class="bg-warning"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="4">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-info"></li>
+                              <li ng-class="theme.topbar" class="bg-info"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="5">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-danger"></li>
+                              <li ng-class="theme.topbar" class="bg-danger"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="6">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-pink"></li>
+                              <li ng-class="theme.topbar" class="bg-pink"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes --><div ng-repeat="theme in config.themes" class="pull-left wd-tiny mb ng-scope">
+                     <div class="setting-color">
+                        <label>
+                           <input type="radio" name="setting-theme" ng-model="app.themeId" ng-value="$index" ng-change="config.setTheme($index)" class="ng-pristine ng-untouched ng-valid" value="7">
+                           <span class="icon-check"></span>
+                           <ul class="list-table">
+                              <li ng-class="theme.sidebar" class="bg-white"></li>
+                              <li ng-class="theme.brand" class="bg-amber"></li>
+                              <li ng-class="theme.topbar" class="bg-amber"></li>
+                           </ul>
+                        </label>
+                     </div>
+                  </div><!-- end ngRepeat: theme in config.themes -->
+               </div>
+            </div>
+            <hr>
+            <div class="p">
+               <p class="text-muted">LAYOUT</p>
+               <div class="clearfix">
+                  <p class="pull-left">Fixed</p>
+                  <div class="pull-right">
+                     <label class="switch switch-info">
+                        <input type="checkbox" ng-model="app.layout.isFixed" ng-disabled="app.layout.isMaterial" class="ng-pristine ng-untouched ng-valid">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+               <div class="clearfix">
+                  <p class="pull-left">Boxed</p>
+                  <div class="pull-right">
+                     <label class="switch switch-info">
+                        <input type="checkbox" ng-model="app.layout.isBoxed" ng-disabled="app.layout.isMaterial" class="ng-pristine ng-untouched ng-valid">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+               <div class="clearfix">
+                  <p class="pull-left">Material</p>
+                  <div class="pull-right">
+                     <label ng-click="app.layout.isBoxed = false; app.layout.isFixed = true" class="switch switch-info">
+                        <input type="checkbox" ng-model="app.layout.isMaterial" ng-disabled="app.layout.isDocked || app.sidebar.isMini" class="ng-pristine ng-untouched ng-valid">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="p">
+               <p class="text-muted">SIDEBAR</p>
+               <div class="clearfix">
+                  <p class="pull-left">Mini</p>
+                  <div class="pull-right">
+                     <label ng-click="app.layout.isMaterial = false;" class="switch switch-info">
+                        <input type="checkbox" ng-model="app.sidebar.isMini" class="ng-pristine ng-untouched ng-valid">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <div class="p">
+               <p class="text-muted">FOOTER</p>
+               <div class="clearfix">
+                  <p class="pull-left">Hidden</p>
+                  <div class="pull-right">
+                     <label class="switch switch-info">
+                        <input type="checkbox" ng-model="app.footer.hidden" class="ng-pristine ng-untouched ng-valid">
+                        <span></span>
+                     </label>
+                  </div>
+               </div>
+            </div>
+            <hr>
+            <div class="p">
+               <!-- START Language list-->
+               <div class="pull-right">
+                  <div dropdown="" is-open="language.listIsOpen" class="btn-group btn-group-sm"><a dropdown-toggle="" class="dropdown-toggle clickable ng-binding" aria-haspopup="true" aria-expanded="false">English<span class="caret"></span></a>
+                     <ul role="menu" class="dropdown-menu dropdown-menu-right animated fadeInLeft2">
+                        <!-- ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope"><a ng-click="language.set(localeId, $event)" href="" class="ng-binding">English</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope"><a ng-click="language.set(localeId, $event)" href="" class="ng-binding">Español</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope"><a ng-click="language.set(localeId, $event)" href="" class="ng-binding">Português</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available --><li ng-repeat="(localeId, langName) in language.available" class="ng-scope"><a ng-click="language.set(localeId, $event)" href="" class="ng-binding">中国简体</a>
+                        </li><!-- end ngRepeat: (localeId, langName) in language.available -->
+                     </ul>
+                  </div>
+               </div>
+               <!-- END Language list    -->
+               <p class="text-muted">LANGUAGE</p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div></div>
+   <!-- End Settings-->
+   <!-- Layer Morph -->
+   <div class="layer-morph-overlay">
+      <div class="layer-morph-inner bg-info"></div>
+   </div>
+   <div layer-morph-close="" class="layer-morph-close">
+      <em class="icon-cross"></em>
+   </div>
+   <div class="layer-morph-container bg-info">
+      <div class="layer-morph-wrapper">
+         <!-- ngInclude: 'templates/layer-search.html' --><div id="layer-search" ng-include="&#39;templates/layer-search.html&#39;" class="layer-morph ng-scope"><form action="" class="ng-pristine ng-valid ng-scope">
+   <p class="help-block">Type and hit enter to search</p>
+   <input type="text" placeholder="I&#39;m looking for..." ng-model="searchTerm" class="form-control input-huge ng-pristine ng-untouched ng-valid">
+   <button type="submit" class="hidden">Search</button>
+</form>
+<div class="row ng-scope">
+   <div class="col-md-4 col-sm-6 pv">
+      <h4 class="text-bold pv-lg">People (4)</h4>
+      <br>
+      <ul class="list-unstyled">
+         <!-- START User-->
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="./images/05.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-success point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Marc Fuller</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+         <!-- START User-->
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="./images/06.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-success point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Wade Wade</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+         <!-- START User-->
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="./images/07.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-danger point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Alan Boyd</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+         <!-- START User-->
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <!-- Contact avatar-->
+               <div class="point-pin">
+                  <a href="">
+                     <img src="./images/01.jpg" alt="Image" class="media-object img-circle thumb40">
+                  </a>
+                  <div class="point point-danger point-lg"></div>
+               </div>
+            </div>
+            <!-- Contact info-->
+            <div class="media-body">
+               <div class="media-heading"><a href="" class="text-md">Ryan Carr</a>
+               </div>
+            </div>
+         </li>
+         <!-- END User-->
+      </ul>
+   </div>
+   <div class="col-md-4 col-sm-6 pv">
+      <h4 class="text-bold pv-lg">Pages (3)</h4>
+      <br>
+      <ul class="list-unstyled">
+         <li class="media">
+            <div class="media-left media-middle">
+               <div class="thumb40 bg-success circle text-center text-bold">D</div>
+            </div>
+            <div class="media-body">
+               <div class="media-heading clearfix"><a ui-sref="app.dashboard" layer-morph-close="" class="pull-left text-md" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/dashboard">Dashboard</a>
+                  <small class="text-muted pull-right mt">3 matches</small>
+               </div>
+            </div>
+         </li>
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <div class="thumb40 bg-purple circle text-center text-bold">P</div>
+            </div>
+            <div class="media-body">
+               <div class="media-heading clearfix"><a ui-sref="app.extras.profile" layer-morph-close="" class="pull-left text-md" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/profile">Profile</a>
+                  <small class="text-muted pull-right mt">3 matches</small>
+               </div>
+            </div>
+         </li>
+         <li>
+            <hr>
+         </li>
+         <li class="media">
+            <div class="media-left media-middle">
+               <div class="thumb40 bg-danger circle text-center text-bold">P</div>
+            </div>
+            <div class="media-body">
+               <div class="media-heading clearfix"><a ui-sref="app.extras.projects" layer-morph-close="" class="pull-left text-md" href="http://geedmo.com/themes/naut/v1.2/angularjs/#/app/extras/projects">Projects</a>
+                  <small class="text-muted pull-right mt">2 match(es)</small>
+               </div>
+            </div>
+         </li>
+      </ul>
+   </div>
+</div></div>
+         <div class="layer-morph-footer">Naut</div>
+      </div>
+   </div>
+   <!-- End Layer Morph -->
+   <!--<script src="./js/vendor-669d84b7.js"></script>
+   <script src="./js/application-0c8ca458.js"></script>
+
+<script src="./js/scrap.js" type="text/javascript"></script>
+<script src="./js/ads.js" type="text/javascript"></script>
+<script src="./js/jquery.js" type="text/javascript"></script>
+<script src="./js/essence.js" type="text/javascript"></script>-->
+
+</body></html>

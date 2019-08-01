@@ -1,0 +1,17 @@
+.InventoryLeft{
+    float:left;
+    width:33%;
+    border-right:1px solid #ccc;
+    padding-right:1%;
+}
+.InventoryRight{
+    float:left;
+    width:66%;
+    padding-left:1%;
+}
+.Heading{
+    font-size: 23px;
+    padding: 0;    
+    font-weight:bold;
+    text-decoration: underline;
+}
